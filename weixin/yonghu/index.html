@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div class="dbox">
+			<div class="dtu">
+				<i class="iconfont icon-qiche"></i>
+			</div>
+			<div class="wenb">
+				<p>深圳非尔思汽车微信订票</p>
+			</div>
+
+			<div class="dzhanghao">
+				<div class="dleft">
+					<i class="iconfont icon-wode"></i>
+				</div>
+				<div class="dright">
+					<input type="text" name="" id="dzhanghao" value="" placeholder="请输入用户名" />
+				</div>
+			</div>
+
+			<div class="dpassword">
+				<div class="dleft">
+					<i class="iconfont icon-mima"></i>
+				</div>
+				<div class="dright">
+					<input type="password" name="dpassword" id="dpassword" value="" placeholder="请输入密码" />
+				</div>
+			</div>
+			<div class="dwang">
+
+			</div>
+			<div class="dbtn">
+				<span>登录</span>
+			</div>
+			<div class="dbon">
+				<div class="ddlft">
+					<a href="javascript:;">忘记密码？</a>
+				</div>
+				<div class="ddrht">
+					<a href="zhuce.html">新用户注册</a>
+				</div>
+			</div>
+		</div>
+		<div class="tans">
+			<i class="iconfont icon-gantanhao_green"></i><span></span>
+		</div>
+		<div class="zhe">
+
+		</div>
+	</body>
+	<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+	<script type="text/javascript">
+		$('.dbtn').on('click', function() {
+			if($('#dzhanghao').val() != '' && $('#dpassword').val() != '') {
+				var txt1 = $('#dzhanghao').val()
+				var txt2 = $('#dpassword').val()
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.110:8090/appuser/login.do",
+					data: { "USERNAME": txt1, "PASSWORD": txt2, },
+					dataType: "json",
+					success: function(data) {
+						var userid = ''
+						if(data.success) {
+							userid = data.msg;
+							localStorage.setItem('userid', JSON.stringify(userid));
+							window.location.href = 'zhuye.html'
+						}else{
+							$(".tans span").text("账号或密码输入错误");
+							$(".tans").show();
+							$('.zhe').show();
+						}
+					}
+				});
+			}
+			if($('#dpassword').val() == '') {
+				$(".tans span").text("请输入密码");
+				$(".tans").show();
+				$('.zhe').show();
+			}
+			if($('#dzhanghao').val() == '') {
+				$(".tans span").text("请输入用户名");
+				$(".tans").show();
+				$('.zhe').show();
+			}
+
+		});
+		$('.tans').on('click', function() {
+			$(".tans").hide();
+			$('.zhe').hide();
+		});
+		$('.zhe').on('click', function() {
+			$(".tans").hide();
+			$('.zhe').hide();
+		});
+	</script>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="css/chenggong.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+
+		<div class="chead ">
+			<div class="cbox">
+
+				<div class="ci">
+					<a href="index.html"><i class="iconfont icon-gengduo-copy"></i></a>
+				</div>
+				<div class="chd">
+					<span>支付完成</span>
+				</div>
+			</div>
+		</div>
+		<div class="cgbg cbox">
+			<div class="bgb">
+				<i class="iconfont icon-duihao-copy"></i>
+			</div>
+
+		</div>
+		<div class="text cbox">
+			<p class="p1">恭喜您</p>
+			<p class="p2">订单已完成支付 点击查看订单观看详情！</p>
+		</div>
+		<div class="btn">
+			<button><a href="dingdanxq.html">查看订单</a></button>
+		</div>
+
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+		</script>
+	</body>
+
+</html>

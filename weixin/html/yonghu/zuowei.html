@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="css/zuowei.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head ">
+				<div class="box">
+					<div class="i">
+						<a href="dingdan.html"><i class="iconfont icon-gengduo-copy"></i></a>
+					</div>
+					<div class="hd">
+						<span>座位选择</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="kong">
+
+		</div>
+		<div class="quan">
+
+			<div class="banxin">
+				<span></span>
+			</div>
+			<div class="xuan">
+				<div class="left">
+					<div class="tu">
+
+					</div>
+					<div class="text">
+						<p>已选</p>
+					</div>
+
+				</div>
+				<div class="center">
+					<div class="tu">
+
+					</div>
+					<div class="text">
+						<p>可选</p>
+					</div>
+
+				</div>
+				<div class="right">
+					<div class="tu">
+
+					</div>
+					<div class="text">
+						<p>已售</p>
+					</div>
+				</div>
+			</div>
+			<div class="wzi">
+				<div class="top">
+					<span>头部</span>
+				</div>
+				<div class="zleft">
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+						<li>7</li>
+						<li>8</li>
+						<li>9</li>
+						<li>10</li>
+						<li>11</li>
+						<li>12</li>
+						<li>13</li>
+						<li>14</li>
+						<li>15</li>
+						<li>16</li>
+						<li>17</li>
+						<li>18</li>
+						<li>19</li>
+						<li>20</li>
+						<li>21</li>
+						<li>22</li>
+						<li>23</li>
+						<li>24</li>
+						<li>25</li>
+						<li>26</li>
+					</ul>
+				</div>
+				<div class="zcen">
+					<p>过</p>
+					<p>道</p>
+				</div>
+				<div class="zright">
+					<div class="shang">
+						<ul>
+							<li>27</li>
+							<li>28</li>
+							<li>29</li>
+							<li>30</li>
+							<li>31</li>
+							<li>32</li>
+							<li>33</li>
+							<li>34</li>
+							<li>35</li>
+							<li>36</li>
+
+						</ul>
+					</div>
+					<div class="zhong">
+						<span>洗手间</span>
+					</div>
+					<div class="xia">
+						<ul>
+
+							<li>37</li>
+							<li>38</li>
+							<li>39</li>
+							<li>40</li>
+							<li>41</li>
+							<li>42</li>
+							<li>43</li>
+							<li>44</li>
+							<li>45</li>
+							<li>46</li>
+							<li>47</li>
+							<li>48</li>
+						</ul>
+					</div>
+				</div>
+				<div class="bon">
+					<span>尾部</span>
+				</div>
+			</div>
+		</div>
+		<div class="srue">
+			<span>确认选座</span>
+		</div>
+		<div class="tan">
+			<span>请选择座位</span>
+		</div>
+		<div class="zhe"></div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var userid = [];
+			if(localStorage.getItem('userid')) {
+				userid = JSON.parse(localStorage.getItem('userid'));
+			}
+			if(userid ==''){
+				$('body').html('')
+			}
+			var data = [];
+			if(localStorage.getItem('data')) {
+				data = JSON.parse(localStorage.getItem('data'));
+
+			}
+			var shuzi = [];
+			if(localStorage.getItem('shuzi')) {
+				shuzi = JSON.parse(localStorage.getItem('shuzi'));
+			}
+			var o = parseInt(shuzi);
+
+			var h = data[o].PRICE;
+			var price = ''
+			$("ul li").on('click', function() {
+				if($(this).hasClass('corro') || $(this).hasClass('corr1')) {
+					$(this).removeClass('corro');
+				} else{
+					$(this).addClass('corro');
+				}
+			})
+			$("ul li").on('click', function() {
+				if($(".corro").length > 5){
+					$(this).removeClass('corro');
+					$('.tan').show();
+					$('.zhe').show();
+					$('.tan').html('最多可选5个座位')
+				}
+			})
+			var zuow = []
+			$(".srue").on('click', function() {
+				if($('.corro').length == 0) {
+					$('.tan').show();
+					$('.zhe').show();
+					
+				} else {
+					$('.tan').hide();
+					$('.zhe').hide();
+					var corro = $('.corro');
+					for(var i = 0; i < $('.corro').length; i++) {
+						zuow.push($(corro[i]).html());
+					}
+					window.location.href="dingdan.html"
+					localStorage.setItem('zuow', JSON.stringify(zuow));
+
+				}
+			});
+			$('.tan').on('click', function() {
+				$('.tan').hide();
+				$('.zhe').hide();
+				
+			});
+			$('.zhe').on('click', function() {
+				$('.tan').hide();
+				$('.zhe').hide();
+				
+			});
+			var shuzi = [];
+			if(localStorage.getItem('shuzi')) {
+				shuzi = JSON.parse(localStorage.getItem('shuzi'));
+			}
+			var data = [];
+			if(localStorage.getItem('data')) {
+				data = JSON.parse(localStorage.getItem('data'));
+
+			}
+			
+			var ttm = [];
+			if(localStorage.getItem('ttm')) {
+				ttm = JSON.parse(localStorage.getItem('ttm'));
+			}
+			
+			var time = data[o].gotime;
+			
+
+			var o = parseInt(shuzi);
+			$('.banxin span').html(data[o].licenseNumber)
+			$.ajax({
+				type: "post",
+				url: "http://192.168.1.110:8090/appuser/getOrder.do",
+				data: { "ORDERDATE": ttm,  "SID": data[o].shift_id},
+				dataType: "json",
+				success: function(data) {
+				
+					if(data[0][1]!=null && data[0][1]!=''){
+						var data1 = data[0][1].split(',');
+						for(var i = 0; i < data1.length; i++) {
+						if(data1[i] != '') {
+							$('ul li').eq(data1[i] - 1).addClass('corr1')
+						}
+
+					}
+					}
+					if(data[0][2]!=null && data[0][2]!=''){
+						var data2 = data[0][2].split(',');
+						for(var i = 0; i < data2.length; i++) {
+						if(data2[i] != '') {
+							$('ul li').eq(data2[i] - 1).addClass('corr1')
+						}
+
+					}
+					}
+					if(data[0][3]!=null && data[0][3]!=''){
+						var data3 = data[0][3].split(',');
+						for(var i = 0; i < data3.length; i++) {
+						if(data3[i] != '') {
+							$('ul li').eq(data3[i] - 1).addClass('corr1')
+						}
+
+					}
+
+					}
+				
+					
+				}
+
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,294 @@
+.box {
+	width: 9.386666rem;
+	margin: 0 auto;
+}
+
+.head {
+	width: 10rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	background: #008CF5;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.i {
+	float: left;
+	width: 1rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+}
+
+.i a {
+	color: white;
+}
+
+.hd {
+	float: left;
+	width: 7rem;
+	height: 1.2rem;
+	text-align: center;
+	font-size: 0.4rem;
+	line-height: 1.2rem;
+	color: white;
+}
+
+.guding {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: 2.4rem;
+}
+
+.rq {
+	width: 10rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	background: white;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.lq {
+	width: 2rem;
+	height: 1.2rem;
+	overflow: hidden;
+	float: left;
+}
+
+.sanjiao {
+	width: 0;
+	height: 0;
+	border: 0.16rem solid transparent;
+	border-right-color: #008CF5;
+	margin-top: 0.44rem;
+	margin-left: 0.16rem;
+	float: left;
+}
+
+.lqt {
+	float: left;
+	font-size: 0.32rem;
+	color: #008CF5;
+	margin-left: 0.1rem;
+}
+
+.rh {
+	width: 2rem;
+	height: 1.2rem;
+	overflow: hidden;
+	float: right;
+}
+
+.rqt {
+	float: right;
+	font-size: 0.32rem;
+	color: #008CF5;
+	margin-right: 0.1rem;
+}
+
+.sanjiao1 {
+	width: 0;
+	height: 0;
+	border: 0.16rem solid transparent;
+	border-left-color: #008CF5;
+	margin-top: 0.44rem;
+	margin-right: 0.16rem;
+	float: right;
+}
+
+.cz {
+	width: 6rem;
+	height: 1.2rem;
+	float: left;
+	text-align: center;
+	line-height: 1.2rem;
+	font-size: 0.346666rem;
+}
+
+.kong {
+	width: 10rem;
+	height: 0.266666rem;
+	margin: 0 auto;
+	padding-top: 2.4rem;
+}
+
+.xiangxi {
+	width: 10rem;
+	height: 2.666666rem;
+	background: white;
+	margin: 0 auto;
+}
+
+.xiang {
+	width: 9.386666rem;
+	height: 2.5rem;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.kong1 {
+	width: 10rem;
+	height: 0.333333rem;
+	margin: 0 auto;
+}
+.xleft{
+	width: 1.6rem;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 0.453333rem;
+	float:left;
+	margin-top:0.2rem;
+}
+.xcen{
+	width: 5rem;
+	height:2.5rem ;
+	float: left;
+	overflow: hidden;
+}
+.xianlu{
+	width: 0.266666rem;
+	height: 1.6rem;
+	float: left;
+	margin-top:0.2rem;
+}
+.yuan{
+	width: 6px;
+	height: 6px;
+	border: 1px solid #008CF5;
+	border-radius:6px ;
+}
+.yon{
+	width: 100%;
+	height: 0.1rem;
+}
+.xian{
+	width: 3px;
+	height: 0.88rem;
+	border-right:1px solid #008CF5;
+}
+.xiant{
+	width: 4.5rem;
+	height: 2.5rem;
+	margin-left: 0.2rem;
+	float: left;
+	margin-top:0.2rem;
+}
+.xiant .chu{
+	font-size: 0.4rem;
+}
+.xiant .dao{
+	font-size: 0.4rem;
+	margin-top: 0.666666rem;
+}
+.xiant .hao{
+	font-size: 0.293333rem;
+	margin-top: 0.213333rem;
+	color: #ff0000;
+}
+.xright{
+	width: 2.5rem;
+	height: 2.5rem;
+	float: right;
+	text-align: right;
+	margin-top:0.2rem;
+}
+.xright .p3 a span{
+	color: white;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	
+}
+.xright .p1{
+	font-size: 0.32rem;
+	color: #008CF5;
+}
+.xright .p1 span{
+	font-size: 0.506666rem;
+}
+.xright .p2{
+	font-size: 0.293333rem;
+	margin-top: 0.4rem;
+}
+.xright .p3{
+	font-size: 0.293333rem;
+	margin-top: 0.266666rem;
+}
+.clik{
+	width: 1.333333rem;
+	height: 0.533333rem;
+	border: none;
+	background: #008CF5;
+	color: white;
+	text-align: center;
+	line-height: 0.533333rem;
+}
+.p3 a{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+.k{
+	width: 10rem;
+	height: 0.133333rem;
+	margin:  0 auto;
+}
+/*guide go*/
+.guide_box{
+	width: 100%;
+	display: flex;
+	background: white;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 9999;
+	padding: 0.16rem;
+	border-top: 1px solid gainsboro;
+	/*box-shadow: 0 0 15px #d9d8d8;*/
+	box-sizing: border-box;
+	
+}
+.guide_box li{
+	flex: 1;
+	
+}
+.guide_box li a{
+	color: #555555;
+	text-align: center;
+}
+.guide_box li a i{
+	font-size:24px;
+	display: block;
+	margin-top: 0.1rem;
+	margin-bottom: 0.133333rem;
+	
+}
+.guide_box li a p{
+	font-size:0.16rem;
+	margin-top: 0.2rem;
+}
+/*guide end*/
+/*.xiangxi a{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}*/
+.kong1{
+	width: 10rem;
+	margin:  0 auto;
+	height: 0.2666666rem;
+	background: #f2f2f2;
+}
+.a{
+	width: 10rem;
+	height: 100%;
+	/*display: inline-block;*/
+}
+.xiangxi a{
+	color: #000000;
+	background: red;
+}
+

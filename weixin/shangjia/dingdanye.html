@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<link rel="stylesheet" type="text/css" href="css/guide.css" />
+		<!--guide-->
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/dingdanye.css" />
+		<style type="text/css">
+			.guide_box li:nth-child(2) a {
+				color: #008cf5;
+			}
+			
+			.bodyry .img img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.img {
+				width: 10rem;
+				margin: 0 auto;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head ">
+				<div class="box">
+					<div class="i">
+						<a href="zhuye.html"><i class="iconfont icon-gengduo-copy"></i></a>
+					</div>
+					<div class="hd">
+						<span>订单管理</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="fun">
+				<ul>
+					<li class="atin quan">
+						<a href="javascrpit:;">全部</a>
+					</li>
+					<li class="you">
+						<a href="javascrpit:;">在线支付</a>
+					</li>
+					<li class="dai">
+						<a href="javascrpit:;">上车支付</a>
+					</li>
+
+					<li class="tui">
+						<a href="javascrpit:;">无效单</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="kong">
+
+		</div>
+		<div class="pni">
+
+			<div class="inp">
+				<input type="" name="sous" id="sous" value="" placeholder="搜索" />
+			</div>
+		</div>
+		<div class="kong1">
+
+		</div>
+		<!--刷数据-->
+		<div class="bodyry">
+			<!--<div class="con">
+				<div class="cente">
+					<div class="left">
+						<p><span class="che">车牌号：</span><span class="che1"></span></p>
+						<p><span class="qi">起始地：</span>-<span class="qi1">深圳-松岗</span></p>
+						<p><span class="dao">目的地：</span>-<span class="dao1">广州-兰州</span></p>
+					</div>
+					<div class="right">
+						<p class="p1"><span>2017-05-22  07:50</span></p>
+						<p class="p2"><span>微信支付</span></p>
+						
+						
+					</div>
+					</div>
+					<div class="bot">
+						<div class="botp">
+							<p>联系电话：<span>531531531313</span></p>
+						</div>
+						<div class="bott">
+							<div class="bnn">
+								
+							</div>
+						</div>
+				</div>
+				<div class="kong1">
+					
+				</div>
+			</div>-->
+		</div>
+		<!--刷数据-->
+
+		<!--guide end-->
+		<!--<ul class="guide_box">
+			<li>
+				<a href="index.html">
+					<i class="iconfont icon-shouye"></i>
+					<p>首页</p>
+				</a>
+			</li>
+			<li>
+				<a href="dingdanye.html">
+					<i class="iconfont icon-dingdan"></i>
+					<p>订单</p>
+				</a>
+			</li>
+			<li>
+				<a href="wode.html">
+					<i class="iconfont icon-wode"></i>
+					<p>我的</p>
+				</a>
+			</li>
+
+		</ul>-->
+		<!--guide end-->
+
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var vuserid = [];
+			if(localStorage.getItem('vuserid')) {
+				vuserid = JSON.parse(localStorage.getItem('vuserid'));
+			}
+			if(vuserid ==''){
+				$('body').html('')
+			}
+			$('.fun').on('click', 'li', function() {
+				var valv = $('#sous').val();
+				if(valv == '') {
+					$('ul li').removeClass('atin');
+					$(this).addClass('atin')
+				}
+
+			})
+
+			$.ajax({
+				type: "post",
+				url: "http://192.168.1.110:8090/appuser/getSJOrder.do",
+				data:{"VID": vuserid },
+				dataType: "json",
+				success: function(data) {
+					console.log(data)
+					function get() {
+						var html = '';
+						for(var i = 0; i < data.length; i++) {
+							var tt = data[i].ORDERDATE;
+							tt = tt.substring(0, 11);
+							var tt1 = data[i].ORDERTIME;
+							tt1 = tt + tt1.substring(11);
+							html += '<div class="con" ORDERINFO_ID="' + data[i].ORDERINFO_ID + '" licenseNumber="' + data[i].licenseNumber + '" fatime="' + tt1 + '" ORDERINFO_ID="' + data[i].ORDERINFO_ID + '" PHONE="' + data[i].PHONE + '" TOTALPRICE="' + data[i].TOTALPRICE + '" PAYMENTMODE="' + data[i].PAYMENTMODE + '" STATE="' + data[i].STATE + '" ctime= "' + data[i].ctime + '" get_off="' + data[i].get_off + '" get_on="' + data[i].get_on + '" gosite="' + data[i].gosite + '" offsite="' + data[i].offsite + '" SEATCOUNT="' + data[i].SEATCOUNT + '" SEAT="' + data[i].SEAT + '"><div class="cente"><a href="javascript:;"><div class="left">'
+							html += '<p><span class="che">车牌号：</span><span class="che1">' + data[i].licenseNumber + '</span></p>'
+							html += '<p><span class="qi">起始地：' + data[i].get_on + '</span>-<span class="qi1">' + data[i].get_off + '</span></p>'
+							html += '<p><span class="dao">目的地：' + data[i].gosite + '</span>-<span class="dao1">' + data[i].offsite + '</span></p>'
+							html += '<p><span class="dao">座位号：' + data[i].SEAT + '</span></p>'
+							html += '</div><div class="right"><p class="p1"><span>' + data[i].ctime + '</span></p>'
+							if(data[i].PAYMENTMODE == 1 && data[i].STATE != 2) {
+								html += '<p class="p2"><span>微信支付</span></p></div></div></a><div class="bot">'
+							} else if(data[i].PAYMENTMODE == 2 && data[i].STATE != 2) {
+								html += '<p class="p2" style="background:#FFA500"><span>上车支付</span></p></div></div></a><div class="bot">'
+							} else if(data[i].PAYMENTMODE == 3 && data[i].STATE != 2) {
+								html += '<p class="p2" style="background:red"><span>后台操作</span></p></div></div></a><div class="bot">'
+							} else if(data[i].PAYMENTMODE == 1 && data[i].STATE == 2) {
+								html += '<p class="p2" style="background:#999999"><span>微信支付</span></p></div></div></a><div class="bot">'
+							} else if(data[i].PAYMENTMODE == 2 && data[i].STATE == 2) {
+								html += '<p class="p2" style="background:#999999"><span>上车支付</span></p></div></div></a><div class="bot">'
+							} else if(data[i].PAYMENTMODE == 3 && data[i].STATE == 2) {
+								html += '<p class="p2" style="background:#999999"><span>后台操作</span></p></div></div></a><div class="bot">'
+							}
+							if(data[i].PAYMENTMODE == 3){
+											html += '<div class="botp"><p>联系电话：<span>' + '' + '</span></p></div>'
+										}else{
+											html += '<div class="botp"><a href="tel:'+data[i].PHONE+'"><p>联系电话：<span>' + data[i].PHONE + '</span></p></a></div>'
+										}
+							html += '<div class="bott"><i class="iconfont icon-gengduo"></i></div></div><div class="kong1"></div></div>'
+						}
+						$('.bodyry').html(html);
+					}
+					get();
+
+					function get1() {
+						var html = '';
+						for(var i = 0; i < data.length; i++) {
+							var tt = data[i].ORDERDATE;
+							tt = tt.substring(0, 11);
+							var tt1 = data[i].ORDERTIME;
+							tt1 = tt + tt1.substring(11);
+							if(data[i].PAYMENTMODE == 1 && data[i].STATE != 2) {
+								html += '<div class="con" ORDERINFO_ID="' + data[i].ORDERINFO_ID + '" licenseNumber="' + data[i].licenseNumber + '" fatime="' + tt1 + '" ORDERINFO_ID="' + data[i].ORDERINFO_ID + '" PHONE="' + data[i].PHONE + '" TOTALPRICE="' + data[i].TOTALPRICE + '" PAYMENTMODE="' + data[i].PAYMENTMODE + '" STATE="' + data[i].STATE + '" ctime= "' + data[i].ctime + '" get_off="' + data[i].get_off + '" get_on="' + data[i].get_on + '" gosite="' + data[i].gosite + '" offsite="' + data[i].offsite + '" SEATCOUNT="' + data[i].SEATCOUNT + '" SEAT="' + data[i].SEAT + '"><div class="cente"><a href="javascript:;"><div class="left">'
+								html += '<p><span class="che">车牌号：</span><span class="che1">' + data[i].licenseNumber + '</span></p>'
+								html += '<p><span class="qi">起始地：' + data[i].get_on + '</span>-<span class="qi1">' + data[i].get_off + '</span></p>'
+								html += '<p><span class="dao">目的地：' + data[i].gosite + '</span>-<span class="dao1">' + data[i].offsite + '</span></p>'
+								html += '<p><span class="dao">座位号：' + data[i].SEAT + '</span></p>'
+								html += '</div><div class="right"><p class="p1"><span>' + data[i].ctime + '</span></p>'
+								html += '<p class="p2"><span>微信支付</span></p></div></div></a><div class="bot">'
+								if(data[i].PAYMENTMODE == 3){
+											html += '<div class="botp"><p>联系电话：<span>' + '' + '</span></p></div>'
+										}else{
+											html += '<div class="botp"><a href="tel:'+data[i].PHONE+'"><p>联系电话：<span>' + data[i].PHONE + '</span></p></a></div>'
+										}
+								html += '<div class="bott"><i class="iconfont icon-gengduo"></i></div></div><div class="kong1"></div></div>'
+							}
+						}
+						$('.bodyry').html(html);
+					}
+
+					function get2() {
+						var html = '';
+						for(var i = 0; i < data.length; i++) {
+							var tt = data[i].ORDERDATE;
+							tt = tt.substring(0, 11);
+							var tt1 = data[i].ORDERTIME;
+							tt1 = tt + tt1.substring(11);
+							if((data[i].PAYMENTMODE == 2 || data[i].PAYMENTMODE == 3) && data[i].STATE != 2 && data[i].SEAT != "") {
+								html += '<div class="con" ORDERINFO_ID="' + data[i].ORDERINFO_ID + '" licenseNumber="' + data[i].licenseNumber + '" fatime="' + tt1 + '" ORDERINFO_ID="' + data[i].ORDERINFO_ID + '" PHONE="' + data[i].PHONE + '" TOTALPRICE="' + data[i].TOTALPRICE + '" PAYMENTMODE="' + data[i].PAYMENTMODE + '" STATE="' + data[i].STATE + '" ctime= "' + data[i].ctime + '" get_off="' + data[i].get_off + '" get_on="' + data[i].get_on + '" gosite="' + data[i].gosite + '" offsite="' + data[i].offsite + '" SEATCOUNT="' + data[i].SEATCOUNT + '" SEAT="' + data[i].SEAT + '"><div class="cente"><a href="javascript:;"><div class="left">'
+								html += '<p><span class="che">车牌号：</span><span class="che1">' + data[i].licenseNumber + '</span></p>'
+								html += '<p><span class="qi">起始地：' + data[i].get_on + '</span>-<span class="qi1">' + data[i].get_off + '</span></p>'
+								html += '<p><span class="dao">目的地：' + data[i].gosite + '</span>-<span class="dao1">' + data[i].offsite + '</span></p>'
+								html += '<p><span class="dao">座位号：' + data[i].SEAT + '</span></p>'
+								html += '</div><div class="right"><p class="p1"><span>' + data[i].ctime + '</span></p>'
+								if(data[i].PAYMENTMODE == 2) {
+									html += '<p class="p2" style="background:#FFA500"><span>上车支付</span></p></div></div></a><div class="bot">'
+								} else if(data[i].PAYMENTMODE == 3) {
+									html += '<p class="p2" style="background:red"><span>后台操作</span></p></div></div></a><div class="bot">'
+								}
+
+								if(data[i].PAYMENTMODE == 3){
+											html += '<div class="botp"><p>联系电话：<span>' + '' + '</span></p></div>'
+										}else{
+											html += '<div class="botp"><a href="tel:'+data[i].PHONE+'"><p>联系电话：<span>' + data[i].PHONE + '</span></p></a></div>'
+										}
+								html += '<div class="bott"><i class="iconfont icon-gengduo"></i></div></div><div class="kong1"></div></div>'
+
+							}
+
+						}
+						$('.bodyry').html(html);
+					}
+
+					function get3() {
+
+						var html = '';
+						for(var i = 0; i < data.length; i++) {
+							var tt = data[i].ORDERDATE;
+							tt = tt.substring(0, 11);
+							var tt1 = data[i].ORDERTIME;
+							tt1 = tt + tt1.substring(11);
+							if(data[i].STATE == 2 || data[i].SEAT == "") {
+								html += '<div class="con" ORDERINFO_ID="' + data[i].ORDERINFO_ID + '" licenseNumber="' + data[i].licenseNumber + '" fatime="' + tt1 + '" ORDERINFO_ID="' + data[i].ORDERINFO_ID + '" PHONE="' + data[i].PHONE + '" TOTALPRICE="' + data[i].TOTALPRICE + '" PAYMENTMODE="' + data[i].PAYMENTMODE + '" STATE="' + data[i].STATE + '" ctime= "' + data[i].ctime + '" get_off="' + data[i].get_off + '" get_on="' + data[i].get_on + '" gosite="' + data[i].gosite + '" offsite="' + data[i].offsite + '" SEATCOUNT="' + data[i].SEATCOUNT + '" SEAT="' + data[i].SEAT + '"><div class="cente"><a href="javascript:;"><div class="left">'
+								html += '<p><span class="che">车牌号：</span><span class="che1">' + data[i].licenseNumber + '</span></p>'
+								html += '<p><span class="qi">起始地：' + data[i].get_on + '</span>-<span class="qi1">' + data[i].get_off + '</span></p>'
+								html += '<p><span class="dao">目的地：' + data[i].gosite + '</span>-<span class="dao1">' + data[i].offsite + '</span></p>'
+								html += '<p><span class="dao">座位号：' + data[i].SEAT + '</span></p>'
+								html += '</div><div class="right"><p class="p1"><span>' + data[i].ctime + '</span></p>'
+								if(data[i].PAYMENTMODE == 1) {
+									html += '<p class="p2" style="background:#999999"><span>微信支付</span></p></div></div></a><div class="bot">'
+								} else if(data[i].PAYMENTMODE == 2) {
+									html += '<p class="p2" style="background:#999999"><span>上车支付</span></p></div></div></a><div class="bot">'
+								} else if(data[i].PAYMENTMODE == 3) {
+									html += '<p class="p2" style="background:#999999"><span>后台操作</span></p></div></div></a><div class="bot">'
+								}
+							if(data[i].PAYMENTMODE == 3){
+											html += '<div class="botp"><p>联系电话：<span>' + '' + '</span></p></div>'
+										}else{
+											html += '<div class="botp"><a href="tel:'+data[i].PHONE+'"><p>联系电话：<span>' + data[i].PHONE + '</span></p></a></div>'
+										}
+								html += '<div class="bott"><i class="iconfont icon-gengduo"></i></div></div><div class="kong1"></div></div>'
+							}
+						}
+						$('.bodyry').html(html);
+					}
+					$('.quan').on('click', function() {
+						var valv = $('#sous').val();
+						if(valv == '') {
+							get();
+						}
+					})
+					$('.you').on('click', function() {
+						var valv = $('#sous').val();
+						if(valv == '') {
+							get1();
+						}
+					})
+					$('.dai').on('click', function() {
+						var valv = $('#sous').val();
+						if(valv == '') {
+							get2();
+						}
+					})
+					$('.tui').on('click', function() {
+						var valv = $('#sous').val();
+						if(valv == '') {
+							get3();
+						}
+					})
+				}
+			})
+			$('.bodyry').on('click', '.con', function() {
+				var valv = $('#sous').val();
+				if(valv == '') {
+					var PHONE = $(this).attr('PHONE');
+					var PAYMENTMODE = $(this).attr('PAYMENTMODE');
+					var SEAT = $(this).attr('SEAT');
+					var SEATCOUNT = $(this).attr('SEATCOUNT');
+					var STATE = $(this).attr('STATE');
+					var TOTALPRICE = $(this).attr('TOTALPRICE');
+					var ctime = $(this).attr('ctime');
+					var get_off = $(this).attr('get_off');
+					var get_on = $(this).attr('get_on');
+					var gosite = $(this).attr('gosite');
+					var offsite = $(this).attr('offsite');
+					var fatime = $(this).attr('fatime');
+					var licenseNumber = $(this).attr('licenseNumber');
+					var ORDERINFO_ID = $(this).attr('ORDERINFO_ID');
+					if(STATE == 2 || SEAT == "") {
+						$(this).find('.cente').find('a').attr('href', 'dingdanwu.html')
+					} else {
+						$(this).find('.cente').find('a').attr('href', 'dingdanxq.html')
+					}
+					var ORDERINFO_ID = $(this).attr('ORDERINFO_ID');
+					localStorage.setItem('PHONE', JSON.stringify(PHONE));
+					localStorage.setItem('PAYMENTMODE', JSON.stringify(PAYMENTMODE));
+					localStorage.setItem('SEAT', JSON.stringify(SEAT));
+					localStorage.setItem('SEATCOUNT', JSON.stringify(SEATCOUNT));
+					localStorage.setItem('TOTALPRICE', JSON.stringify(TOTALPRICE));
+					localStorage.setItem('ctime', JSON.stringify(ctime));
+					localStorage.setItem('get_off', JSON.stringify(get_off));
+					localStorage.setItem('get_on', JSON.stringify(get_on));
+					localStorage.setItem('gosite', JSON.stringify(gosite));
+					localStorage.setItem('offsite', JSON.stringify(offsite));
+					localStorage.setItem('ORDERINFO_ID', JSON.stringify(ORDERINFO_ID));
+					localStorage.setItem('STATE', JSON.stringify(STATE));
+					localStorage.setItem('fatime', JSON.stringify(fatime));
+					localStorage.setItem('licenseNumber', JSON.stringify(licenseNumber));
+				}
+			})
+			$('#sous').on('blur', function() {
+				var valv = $('#sous').val();
+				if(valv != '') {
+					setTimeout(function() {
+						$('#sous').val('')
+					}, 100)
+					$.ajax({
+						type: "post",
+						url: "http://192.168.1.110:8090/appuser/getSJOrder.do",
+						data: { "queryInfo": valv,"VID": vuserid  },
+						dataType: "json",
+						success: function(data) {
+							console.log(data)
+							if(data != '') {
+								function gett() {
+									var html = '';
+									for(var i = 0; i < data.length; i++) {
+										var tt = data[i].ORDERDATE;
+										tt = tt.substring(0, 11);
+										var tt1 = data[i].ORDERTIME;
+										tt1 = tt + tt1.substring(11);
+										html += '<div class="con" ORDERINFO_ID="' + data[i].ORDERINFO_ID + '" licenseNumber="' + data[i].licenseNumber + '" fatime="' + tt1 + '" ORDERINFO_ID="' + data[i].ORDERINFO_ID + '" PHONE="' + data[i].PHONE + '" TOTALPRICE="' + data[i].TOTALPRICE + '" PAYMENTMODE="' + data[i].PAYMENTMODE + '" STATE="' + data[i].STATE + '" ctime= "' + data[i].ctime + '" get_off="' + data[i].get_off + '" get_on="' + data[i].get_on + '" gosite="' + data[i].gosite + '" offsite="' + data[i].offsite + '" SEATCOUNT="' + data[i].SEATCOUNT + '" SEAT="' + data[i].SEAT + '"><a href=""><div class="cente"><div class="left">'
+										html += '<p><span class="che">车牌号：</span><span class="che1">' + data[i].licenseNumber + '</span></p>'
+										html += '<p><span class="qi">起始地：' + data[i].get_on + '</span>-<span class="qi1">' + data[i].get_off + '</span></p>'
+										html += '<p><span class="dao">目的地：' + data[i].gosite + '</span>-<span class="dao1">' + data[i].offsite + '</span></p>'
+										html += '</div><div class="right"><p class="p1"><span>' + data[i].ctime + '</span></p>'
+										if(data[i].PAYMENTMODE == 1 && data[i].STATE != 2) {
+											html += '<p class="p2"><span>微信支付</span></p></div></div><div class="bot">'
+										} else if(data[i].PAYMENTMODE == 2 && data[i].STATE != 2) {
+											html += '<p class="p2" style="background:red"><span>上车支付</span></p></div></div><div class="bot">'
+										} else if(data[i].PAYMENTMODE == 3 && data[i].STATE != 2) {
+											html += '<p class="p2" style="background:red"><span>后台操作</span></p></div></div><div class="bot">'
+										} else if(data[i].PAYMENTMODE == 1 && data[i].STATE == 2) {
+											html += '<p class="p2" style="background:#999999"><span>微信支付</span></p></div></div><div class="bot">'
+										} else if(data[i].PAYMENTMODE == 2 && data[i].STATE == 2) {
+											html += '<p class="p2" style="background:#666666"><span>上车支付</span></p></div></div><div class="bot">'
+										} else if(data[i].PAYMENTMODE == 3 && data[i].STATE == 2) {
+											html += '<p class="p2" style="background:#666666"><span>后台操作</span></p></div></div><div class="bot">'
+										}
+										if(data[i].PHONE == ''){
+											html += '<div class="botp"><p>联系电话：<span>' + '' + '</span></p></div>'
+										}else{
+											html += '<div class="botp"><a href="tel:'+data[i].PHONE+'"><p>联系电话：<span>' + data[i].PHONE + '</span></p></a></div>'
+										}
+										
+										html += '<div class="bott"><i class="iconfont icon-gengduo"></i></div></div><div class="kong1"></div></a></div>'
+									}
+									$('.bodyry').html(html);
+								}
+								gett();
+							} else {
+								$('.bodyry').html('');
+							}
+
+						}
+					})
+				}
+			})
+		</script>
+	</body>
+
+</html>

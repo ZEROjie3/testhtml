@@ -1,0 +1,131 @@
+.box {
+	width: 9.386666rem;
+	margin: 0 auto;
+}
+
+.head {
+	width: 10rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	background: #008CF5;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.i {
+	float: left;
+	width: 1rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+}
+
+.i a {
+	color: white;
+}
+
+.hd {
+	float: left;
+	width: 7rem;
+	height: 1.2rem;
+	text-align: center;
+	font-size: 0.4rem;
+	line-height: 1.2rem;
+	color: white;
+}
+
+.guding {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: 1.2rem;
+}
+.kong{
+	width: 10rem;
+	height: 0.4rem;
+	margin: 0 auto;
+	padding-top: 1.2rem;
+}
+.text{
+	width: 10rem;
+	margin: 0 auto;	
+	background: white;
+	padding-bottom: 0.32rem;
+}
+.ul{
+	width: 9.6rem;
+	margin-left: 0.4rem;
+	
+}
+.ul li{
+	width: 100%;
+	height: 1.333333rem;
+	line-height: 1.333333rem;
+	font-size: 0.346666rem;
+	border-bottom: 1px solid gainsboro;
+	
+}
+.ul li .ris{
+	font-size: 0.32rem;
+	margin-left: 0.213333rem;
+	color: #666666;
+}
+.ul li .yues{
+	font-size: 0.32rem;
+	margin-left: 0.213333rem;
+	color: #666666;
+}
+.ul li .nians{
+	font-size: 0.32rem;
+	margin-left: 0.213333rem;
+	color: #666666;
+}
+.ul li:last-child{
+	border: none;
+}
+.kong1{
+	width: 10rem;
+	height: 0.266666rem;
+	margin: 0 auto;
+}
+.btnp{
+	width: 9.2rem;
+	height: 1.333333rem;
+	text-align: center;
+	line-height:1.333333rem;
+	color: white;
+	font-size: 0.506666rem;
+	background: #008CF5;
+	border-radius:8px ;
+	margin-bottom: 0.5rem;
+	margin: 0 auto;
+	margin-top: 0.5rem;
+}
+.tan{
+	width: 4rem;
+	height: 1.226666rem;
+	position: fixed;
+	z-index: 99999999;
+	left: 50%;
+	top: 50%;
+	margin-left: -2rem;
+	margin-top: -0.613333rem;
+	background: #000;
+	color: white;
+	text-align: center;
+	line-height: 1.226666rem;
+	font-size: 0.4rem;
+	border-radius: 5px;
+	display: none;
+}
+.zhe{
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	opacity: 0.3;
+	position: fixed;
+	z-index: 99998;
+	left: 0;
+	top: 0;
+	display: none;
+}

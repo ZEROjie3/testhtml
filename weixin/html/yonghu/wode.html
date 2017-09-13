@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/guide.css" />
+		<link rel="stylesheet" type="text/css" href="css/wode.css" />
+
+		<style type="text/css">
+			.guide_box li:nth-child(3) a {
+				color: #008cf5;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="banner_box">
+			<div class="banner">
+				<img class="imgs"/>
+			</div>
+		</div>
+		<div class="xiaoTu">
+			<div class="ren">
+				<div class="xiao">
+					<img class="imgs"/>	
+				</div>
+			</div>
+
+		</div>
+		<div class="text">
+			<p class="name"></p>
+
+		</div>
+		<div class="kong">
+			
+		</div>
+		<!-- <div class="ke">
+			<div class="box">
+				<div class="left">
+					<img src="img/tb_03.png"/>
+				</div>
+				<div class="center">
+					<span>修改个人资料</span>
+				</div>
+				<div class="right">
+					<span id="geren">
+						<i class="iconfont icon-gengduo"></i>
+					</span>
+				</div>
+			</div>
+		</div> -->
+		<!-- <div class="ke1">
+			
+			<div class="box bnnc">
+				<a href="xiugaimima.html">
+				<div class="left">
+					<img src="img/tb_06.png"/>
+				</div>
+				<div class="center">
+					<span>修改密码</span>
+				</div>
+				<div class="right">
+					<span id="mima">
+						<i class="iconfont icon-gengduo"></i>
+					</span>
+				</div>
+				</a>
+			</div>
+		</div> -->
+		<!--<div class="ke1">
+			<div class="box">
+				<div class="left">
+					<i></i>
+				</div>
+				<div class="center">
+					<span>财务管理</span>
+				</div>
+				<div class="right">
+					<span id="caiwu">
+						<i class="iconfont icon-gengduo"></i>
+					</span>
+				</div>
+			</div>
+		</div>-->
+		<div class="ke1">
+			<div class="box">
+				<div class="left">
+					<img src="img/tb_08.png"/>
+				</div>
+				<div class="center">
+					<span>客服电话</span><span class="pmy"><a href="tel:000222222">000-222-222</a></span>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="tuichu">
+			<span>退出登录</span>
+		</div> -->
+		<!--guide end-->
+		<ul class="guide_box">
+			<li>
+				<a href="index.html">
+					<i class="iconfont icon-shouye"></i>
+					<p>首页</p>
+				</a>
+			</li>
+			<li>
+				<a href="dingdanye.html">
+					<i class="iconfont icon-dingdan"></i>
+					<p>订单</p>
+				</a>
+			</li>
+			<li>
+				<a href="wode.html">
+					<i class="iconfont icon-wode"></i>
+					<p>我的</p>
+				</a>
+			</li>
+
+		</ul>
+		<!--guide end-->
+		<div class="tan">
+			<div class="p">
+				<p>提醒</p>
+			</div>
+
+			<div class="textt">
+				<p>确认退出登录吗？</p>
+			</div>
+			<div class="an">
+				<button class="sure"><a href="index.html">确定</a></button><button class="qux">取消</button>
+			</div>
+
+		</div>
+		<div class="zhe">
+
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			
+			var userid = [];
+			if(localStorage.getItem('userid')) {
+				userid = JSON.parse(localStorage.getItem('userid'));
+			}
+			if(userid ==''){
+				$('body').html('')
+			}
+			var src = [];
+			if(localStorage.getItem('src')) {
+				src = JSON.parse(localStorage.getItem('src'));
+			}
+			var myname = [];
+			if(localStorage.getItem('myname')) {
+				myname = JSON.parse(localStorage.getItem('myname'));
+			}
+			$('.imgs').attr("src",src);
+			$('.name').html(myname);
+			$('.tuichu').on('click',function(){
+				$('.tan').show()
+				$('.zhe').show()
+			})
+			$('.qux').on('click',function(){
+				$('.tan').hide()
+				$('.zhe').hide()
+			})
+			$('.zhe').on('click',function(){
+				$('.tan').hide()
+				$('.zhe').hide()
+			})
+			$('.sure').on('click',function(){
+				$('.tan').hide()
+				$('.zhe').hide()
+			})
+		</script>
+	</body>
+
+</html>

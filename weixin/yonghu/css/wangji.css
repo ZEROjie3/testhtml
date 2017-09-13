@@ -1,0 +1,134 @@
+.dbox{
+	width: 10rem;
+	height: 17.786666rem;
+	margin: 0 auto;
+	background: url(../img/tu.png);
+	
+}
+.dtu{
+	color: white;
+	width: 10rem;
+	height: 4rem;
+	text-align: center;
+	line-height: 4rem;
+	padding-top: 2rem;
+}
+.dtu i{
+	font-size: 2rem;
+}
+.dzhanghao{
+	width: 7.253333rem;
+	margin: 0 auto;
+	height: 1.226666rem;
+	border-bottom: 1px solid #5fc1ec;
+	line-height:1.226666rem;
+	overflow: hidden;
+}
+.dleft{
+	width: 1.333333rem;
+	height: 1.226666rem;
+	line-height:1.226666rem;
+	float: left;
+	text-align: center;
+	color: white;
+	
+}
+.dleft i{
+	font-size: 0.533333rem;
+}
+.dright{
+	width: 5.92rem;
+	height: 1.226666rem;
+	line-height:1.226666rem;
+	float: left;
+}
+#dzhanghao{
+	width: 5.92rem;
+	height: 1.226666rem;
+	line-height:1.226666rem;
+	border: none;
+	color:#a6e1ff ;
+	font-size: 0.32rem;
+	background: transparent;
+}
+.dwang{
+	width: 7.253333rem;
+	height: 1.146666rem;
+	line-height: 1.146666rem;
+	text-align: right;
+	margin: 0 auto;
+	color: #07679a;
+	font-size: 0.32rem;
+}
+.dpassword{
+	width: 7.253333rem;
+	margin: 0 auto;
+	height: 1.226666rem;
+	border-bottom: 1px solid #5fc1ec;
+	line-height:1.226666rem;
+	overflow: hidden;
+}
+#dpassword{
+	width: 5.92rem;
+	height: 1.226666rem;
+	line-height:1.226666rem;
+	border: none;
+	color:#a6e1ff ;
+	font-size: 0.32rem;
+	background: transparent;
+}
+
+
+.dbtn{
+	width: 7.306666rem;
+	height: 1.226666rem;
+	text-align: center;
+	line-height:1.226666rem;
+	background: #0571a8;
+	color: white;
+	margin: 0 auto;
+	font-size: 0.4rem;
+}
+.dbon{
+	width: 7.306666rem;
+	margin: 0 auto;
+	height: 1.093333rem;
+	line-height:1.093333rem;
+	font-size: 0.32rem;
+	overflow: hidden;
+	color: #0571a8;
+}
+
+
+.dbon a{
+	color: #0571a8;
+}
+input:-ms-input-placeholder{
+    color: #a6e1ff;
+}
+
+input::-webkit-input-placeholder{
+    color: #a6e1ff;
+}
+.center{
+	width: 2.9rem;
+	height: 1.226666rem;
+	line-height:1.226666rem;
+	float: left;
+}
+#yanz{
+	width: 2.9rem;
+	height: 1.226666rem;
+	line-height:1.226666rem;
+	border: none;
+	background: transparent;
+	color:#a6e1ff ;
+}
+.ghr{
+	width: 3rem;
+	height: 1.226666rem;
+	background: goldenrod;
+	float: right;
+}
+
+

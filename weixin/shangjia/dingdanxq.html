@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="css/dingdanxq.css" />
+		<link rel="stylesheet" type="text/css" href="css/guide.css" />
+		<style type="text/css">
+			.guide_box li:nth-child(2) a {
+				color: #008cf5;
+			}
+			
+			.bodyo {
+				background: white;
+				width: 10rem;
+				margin: 0 auto;
+			}
+			
+			.bunn {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head ">
+				<div class="box">
+					<div class="i">
+						<a href="dingdanye.html"><i class="iconfont icon-gengduo-copy"></i></a>
+					</div>
+					<div class="hd">
+						<span>订单管理</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="kong1">
+
+		</div>
+
+		<!--支付-->
+		<div class="bodyo">
+			<div class="box">
+				<ul class="ul">
+					<li>
+						<div class="pan1"> 订单状态：</div>
+						<div class="pan2"> </div>
+					</li>
+					<li>
+						<div class="pan1"> 订单编号：</div>
+						<div class="pan13"> </div>
+					</li>
+					<li>
+						<div class="pan1"> 车牌号：</div>
+						<div class="pan3"> </div>
+					</li>
+					<li>
+						<div class="pan1"> 发车时间： </div>
+						<div class="pan4"></div>
+					</li>
+					<li>
+						<div class="pan1"> 下单时间：</div>
+						<div class="pan5"> </div>
+					</li>
+					<li>
+						<div class="pan1"> 路线：</div>
+						<div class="pan6"><span class='p1'></span >-<span class='p2'></span></div>
+					</li>
+					<li>
+						<div class="pan1">上下目的地：</div>
+						<div class="pan7"> <span class="r1"></span>-<span class="r2"></span></div>
+					</li>
+					<li>
+						<div class="pan1"> 预定票数：</div>
+						<div class="pan8"> </div>
+					</li>
+					<li>
+						<div class="pan1"> 预定座位：</div>
+						<div class="pan9"> </div>
+					</li>
+					<li>
+						<div class="pan1"> 支付方式： </div>
+						<div class="pan10"></div>
+					</li>
+					<li>
+						<div class="pan1"> 支付金额： </div>
+						<div class="pan11">¥<span></span></div>
+					</li>
+					<li class="lil">
+						<a href=""> 
+						<div class="pan1">联系电话： </div>
+						<div class="pan12"></div>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="bunn">
+			<div class="xiu">
+				<span>修改</span>
+			</div>
+			<div class="quxx">
+				<span>取消订单</span>
+			</div>
+		</div>
+		<div class="tan">
+			<div class="p">
+				<p>提醒</p>
+			</div>
+
+			<div class="text">
+				<p>确认取消此订单吗？</p>
+			</div>
+			<div class="an">
+				<button class="sure">确定</button><button class="qux">取消</button>
+			</div>
+
+		</div>
+		<div class="zhe">
+
+		</div>
+		<div class="zhe1">
+
+		</div>
+		<div class="sccg">
+			<span>订单已取消成功！</span>
+		</div>
+		<div class="sccg1">
+			<span>订单已修改完成！</span>
+		</div>
+		<div class="xiug">
+			<div class="xtop">
+				<div class="left">
+					<span>修改</span>
+				</div>
+				<div class="right">
+					<i class="iconfont icon-cuohao1"></i>
+				</div>
+			</div>
+			<div class="shouji">
+				<input type="text" name="shouji" id="shouji" value="" placeholder="修改手机号" />
+			</div>
+			<div class="jiage">
+				<input type="text" name="jiage" id="jiage" value="" placeholder="修改价格" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();" />
+			</div>
+			<div class="quer">
+				<span>确认</span>
+			</div>
+		</div>
+		<!--guide end-->
+		<!--<ul class="guide_box">
+			<li>
+				<a href="#">
+					<i class="iconfont icon-shouye"></i>
+					<p>地区</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="iconfont icon-dingdan"></i>
+					<p>时间段</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="iconfont icon-wode"></i>
+					<p>车型</p>
+				</a>
+			</li>
+			
+		</ul>-->
+		<!--guide end-->
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var vuserid = [];
+			if(localStorage.getItem('vuserid')) {
+				vuserid = JSON.parse(localStorage.getItem('vuserid'));
+			}
+			if(vuserid ==''){
+				$('body').html('')
+			}
+			var ORDERINFO_ID = [];
+			if(localStorage.getItem('ORDERINFO_ID')) {
+				ORDERINFO_ID = JSON.parse(localStorage.getItem('ORDERINFO_ID'));
+			}
+			var PAYMENTMODE = [];
+			if(localStorage.getItem('PAYMENTMODE')) {
+				PAYMENTMODE = JSON.parse(localStorage.getItem('PAYMENTMODE'));
+			}
+			var PHONE = [];
+			if(localStorage.getItem('PHONE')) {
+				PHONE = JSON.parse(localStorage.getItem('PHONE'));
+			}
+			var SEAT = [];
+			if(localStorage.getItem('SEAT')) {
+				SEAT = JSON.parse(localStorage.getItem('SEAT'));
+			}
+			var SEATCOUNT = [];
+			if(localStorage.getItem('SEATCOUNT')) {
+				SEATCOUNT = JSON.parse(localStorage.getItem('SEATCOUNT'));
+			}
+			var STATE = [];
+			if(localStorage.getItem('STATE')) {
+				STATE = JSON.parse(localStorage.getItem('STATE'));
+			}
+			var TOTALPRICE = [];
+			if(localStorage.getItem('TOTALPRICE')) {
+				TOTALPRICE = JSON.parse(localStorage.getItem('TOTALPRICE'));
+			}
+			var ctime = [];
+			if(localStorage.getItem('ctime')) {
+				ctime = JSON.parse(localStorage.getItem('ctime'));
+			}
+			var get_off = [];
+			if(localStorage.getItem('get_off')) {
+				get_off = JSON.parse(localStorage.getItem('get_off'));
+			}
+			var get_on = [];
+			if(localStorage.getItem('get_on')) {
+				get_on = JSON.parse(localStorage.getItem('get_on'));
+			}
+			var gosite = [];
+			if(localStorage.getItem('gosite')) {
+				gosite = JSON.parse(localStorage.getItem('gosite'));
+			}
+
+			var offsite = [];
+			if(localStorage.getItem('offsite')) {
+				offsite = JSON.parse(localStorage.getItem('offsite'));
+			}
+			var ORDERINFO_ID = [];
+			if(localStorage.getItem('ORDERINFO_ID')) {
+				ORDERINFO_ID = JSON.parse(localStorage.getItem('ORDERINFO_ID'));
+			}
+			var fatime = [];
+			if(localStorage.getItem('fatime')) {
+				fatime = JSON.parse(localStorage.getItem('fatime'));
+			}
+			var licenseNumber = [];
+			if(localStorage.getItem('licenseNumber')) {
+				licenseNumber = JSON.parse(localStorage.getItem('licenseNumber'));
+			}
+			if(PAYMENTMODE == 1 && STATE != 3) {
+				$('.pan2').html('已付款')
+			}
+			if(PAYMENTMODE == 2 && STATE != 3) {
+				$('.pan2').html('未付款')
+			}
+			if(PAYMENTMODE == 3 && STATE != 3) {
+				$('.pan2').html('未付款')
+			}
+			if(STATE == 3){
+				$('.pan2').html('已付款')
+				$('.xiu').css('background','#999999')
+				$('.xiu').css('border','1px solid #999999')
+			}
+			$('.pan3').html(licenseNumber)
+			$('.pan4').html(fatime)
+			$('.pan5').html(ctime)
+			$('.pan6 .p1').html(get_on)
+			$('.pan6 .p2').html(get_off)
+			$('.pan7 .r1').html(gosite)
+			$('.pan7 .r2').html(offsite)
+			$('.pan8').html(SEATCOUNT)
+			$('.pan9').html(SEAT)
+			if(PAYMENTMODE == 1) {
+				$('.pan10 ').html('微信支付')
+				$('.xiu').css('background','#999999')
+				$('.xiu').css('border','1px solid #999999')
+			}
+			if(PAYMENTMODE == 2) {
+				$('.pan10 ').html('上车支付')
+			}
+			if(PAYMENTMODE == 3) {
+				$('.pan10 ').html('后台操作')
+			}
+
+			$('.pan11 span').html(TOTALPRICE)
+			if(PAYMENTMODE == 3){
+				$('.pan12').html('')
+			}else{
+				$('.pan12').html(PHONE)
+				var yuio = "tel"+":"+PHONE;
+				$('.lil a').attr("href",yuio)
+				
+			}
+			
+			$('.pan13').html(ORDERINFO_ID)
+
+			$('.quxx').on('click', function() {
+				$('.tan').show()
+				$('.zhe').show()
+			})
+			$('.qux').on('click', function() {
+				$('.tan').hide()
+				$('.zhe').hide()
+			})
+			$('.qux').on('click', function() {
+				$('.tan').hide()
+				$('.zhe').hide()
+			})
+			$('.zhe').on('click', function() {
+				$('.tan').hide()
+				$('.zhe').hide()
+				$('.xiug').hide()
+
+			})
+			$('.zhe1').on('click', function() {
+				$('.zhe1').hide()
+				$('.sccg1').hide()
+
+			})
+			var timestamp = Date.parse(new Date());
+			timestamp = timestamp / 1000;
+			timestamp = parseInt(timestamp)
+			var stringTime = fatime;
+			var timestamp2 = Date.parse(new Date(stringTime));
+			timestamp2 = timestamp2 / 1000;
+			timestamp2 = parseInt(timestamp2)
+			if(timestamp < timestamp2) {
+				$('.bunn').show();
+			}
+			$('.sure').on('click', function() {
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.110:8090/appuser/getcancel.do",
+					data: { 'id': ORDERINFO_ID,"VID": vuserid },
+					dataType: "json",
+					success: function(data) {
+						if(data.success) {
+							$('.zhe').show()
+							$('.sccg').show();
+							$('.tan').hide()
+							setTimeout(function() {
+								window.location.href = 'dingdanwu.html'
+							}, 1000)
+						} else {
+							alert('删除失败')
+						}
+					}
+				})
+			})
+			$('.xiu').on('click', function() {
+				if(PAYMENTMODE != 1 && STATE !=3){
+					$('.zhe').show()
+					$('.xiug').show()
+					$('#shouji').val(PHONE);
+				}
+				
+			})
+			$('.xiug .right').on('click', function() {
+				$('.zhe').hide()
+				$('.xiug').hide()
+			})
+				$('#shouji').on('blur',function(){
+				
+						checkPhone();
+				
+						
+						})
+						function checkPhone(){ 
+					    var shouji = document.getElementById('shouji').value;
+					    if(!(/^1[34578]\d{9}$/.test(shouji))){ 
+								$('.zhe1').show();
+								$(".sccg1").show()
+								$(".sccg1").text("手机号输入错误");
+					        return false; 
+					    } 
+					}
+			$('.xiug .quer').on('click', function() {
+				var totalprice1 = $('#jiage').val()
+				var PHONE1 = $('#shouji').val()
+				if(totalprice1 != '' && PHONE1 != '' && $(".sccg1").text !="手机号输入错误") {
+					
+					$.ajax({
+						type: "post",
+						url: "http://192.168.1.110:8090/appuser/updataState.do",
+						data: { "order_id": ORDERINFO_ID, "totalprice": totalprice1, "phone": PHONE1, "state": STATE,"VID": vuserid },
+						dataType: "json",
+						success: function(data) {
+							if(data.success) {
+								$('.xiug').hide();
+								$('.zhe').hide()
+								$('.zhe').show()
+								$('.sccg1').show();
+								$(".sccg1").text("订单已修改完成！");
+								$('.pan11 span').html(totalprice1)
+								$('.pan12').html(PHONE1)
+								setTimeout(function() {
+									$('.zhe').hide()
+									$('.sccg1').hide();
+								}, 500)
+							} else {
+								alert('修改失败')
+							}
+						}
+					})
+				}
+				if(totalprice1 == '') {
+					$(".sccg1").show()
+					$(".zhe1").show()
+					$(".sccg1").text("请输入价格");
+				}
+				if(PHONE1 == '') {
+					$(".sccg1").show()
+					$(".zhe1").show()
+					$(".sccg1").text("请输入手机号");
+				}
+
+			})
+			
+		</script>
+	</body>
+
+</html>

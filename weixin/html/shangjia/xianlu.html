@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<!--		
+		<link rel="stylesheet" type="text/css" href="css/guide.css" />-->
+		<!--<link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">-->
+		<link rel="stylesheet" type="text/css" href="css/xianlu.css" />
+		<style type="text/css">
+			.guide_box li:nth-child(2) a {
+				color: #008cf5;
+			}
+			
+			.btnnnt {
+				position: absolute;
+				height: 0.666666rem;
+				width: 0.666666rem;
+				border-radius: 0.666666rem;
+				background: #000;
+				right: -0.333333rem;
+				top: -0.333333rem;
+				line-height: 0.666666rem;
+				text-align: center;
+			}
+			
+			.btnnnt i {
+				font-size: 24px;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head ">
+				<div class="box">
+
+					<div class="i">
+						<a href="zhuye.html"><i class="iconfont icon-gengduo-copy"></i></a>
+					</div>
+					<div class="hd">
+						<span>线路管理</span>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="kong1">
+
+		</div>
+		<div class="sousuo">
+			<input type="text" name="" id="sousuo" value="" placeholder="搜索" />
+		</div>
+		<div class="xianlu">
+
+		</div>
+
+		<!--guide end-->
+		<!--<ul class="guide_box">
+			<li>
+				<a href="#">
+					<i class="iconfont icon-shouye"></i>
+					<p>地区</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="iconfont icon-dingdan"></i>
+					<p>时间段</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="iconfont icon-wode"></i>
+					<p>车型</p>
+				</a>
+			</li>
+			
+		</ul>-->
+		<!--guide end-->
+
+		<!--弹窗添加-->
+		<!--<div class="tanj">
+			<div class="btnnnt">
+				<i class="iconfont icon-cuohao1"></i>
+			</div>
+			<div class="zhong">
+			
+			<div class="jai">
+				<p>添加</p>
+			</div>
+			
+			<form class="form-inline">
+		      <div data-toggle="distpicker">
+		        <div class="form-group">
+		          <label class="sr-only" for="province1">Province</label>
+		          <select class="form-control" id="province1"></select>
+		        </div>
+		        <div class="form-group">
+		          <label class="sr-only" for="city1">City</label>
+		          <select class="form-control" id="city1"></select>
+		        </div>
+		        <div class="form-group">
+		          <label class="sr-only" for="district1">District</label>
+		          <select class="form-control" id="district1"></select>
+		        </div>
+		      </div>
+    	</form>
+
+			<div class="queding">
+				<span>确定</span>
+			</div>
+			</div>
+		</div>
+		<!--弹窗添加-->
+		<!--弹窗添加-->
+		<!--<div class="shanchu">
+			<div class="btnnnt">
+				<i class="iconfont icon-cuohao1"></i>
+			</div>
+			<div class="zhong">
+			
+			<div class="jai">
+				<p>删除</p>
+			</div>
+			
+			<form class="form-inline">
+		      <div data-toggle="distpicker">
+		        <div class="form-group">
+		          <label class="sr-only" for="province1">Province</label>
+		          <select class="form-control" id="province1"></select>
+		        </div>
+		        <div class="form-group">
+		          <label class="sr-only" for="city1">City</label>
+		          <select class="form-control" id="city1"></select>
+		        </div>
+		        <div class="form-group">
+		          <label class="sr-only" for="district1">District</label>
+		          <select class="form-control" id="district1"></select>
+		        </div>
+		      </div>
+    	</form>
+
+			<div class="queding">
+				<span>确定</span>
+			</div>
+			</div>
+		</div>-->
+		<!--弹窗添加-->
+		<!--遮罩-->
+		<!--<div class="zhe">
+			
+		</div>-->
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/distpicker.data.js"></script>
+		<script src="js/distpicker.js"></script>
+		<script src="js/main.js"></script>
+		<script type="text/javascript">
+			function GetDateStr(AddDayCount) {
+				var dd = new Date();
+				dd.setDate(dd.getDate() + AddDayCount); //获取AddDayCount天后的日期 
+				var y = dd.getFullYear();
+				var m = dd.getMonth() + 1; //获取当前月份的日期 
+				var d = dd.getDate();
+				return y + "-0" + m + "-" + d;
+			}
+			var vuserid = [];
+			if(localStorage.getItem('vuserid')) {
+				vuserid = JSON.parse(localStorage.getItem('vuserid'));
+			}
+			if(vuserid ==''){
+				$('body').html('')
+			}
+			$('.add').on('click', function() {
+				$('.time').html(GetDateStr(0));
+				var w = -$('.tanj').width() / 2 + 'px';
+				var h = -$('.tanj').height() / 2 + 'px';
+				$('.tanj').css({ 'margin-left': w, "margin-top": h });
+				$('.tanj').show();
+				$('.zhe').show();
+				$(this).addClass('cor');
+				$('.del').removeClass('cor');
+			})
+			$(".tanj .btnnnt").on('click', function() {
+				$('.tanj').hide();
+				$('.zhe').hide();
+			})
+			$(".queding").on('click', function() {
+				$('.tanj').hide();
+				$('.zhe').hide();
+				$('.shanchu').hide();
+			})
+			$(".shanchu .btnnnt").on('click', function() {
+				$('.shanchu').hide();
+				$('.zhe').hide();
+			})
+
+			$('.del').on('click', function() {
+				var w1 = -$('.shanchu').width() / 2 + 'px';
+				var h1 = -$('.shanchu').height() / 2 + 'px';
+				$('.shanchu').css({ 'margin-left': w1, "margin-top": h1 });
+				$('.shanchu').show();
+				$('.zhe').show();
+				$('.add').removeClass('cor');
+				$(this).addClass('cor');
+
+			})
+
+			$.ajax({
+				type: "post",
+				url: "http://dingpiao.ec-8.cn/appuser/getDes.do",
+				dataType: "json",
+				success: function(data) {
+					
+					var html = ''
+					for(var i = 0; i < data.length; i++) {
+						html += '<div class="lu"><div class="diz"><p>' + data[i].cityName + '</p></div><ul>'
+						html += '</ul></div>'
+					}
+					$('.xianlu').html(html);
+				}
+			});
+			
+						
+			$.ajax({
+				type: "post",
+				url: "http://dingpiao.ec-8.cn/appuser/getShift.do",
+				dataType: "json",
+				success: function(data) {
+					
+					$('.xianlu').on('click', '.diz', function() {
+						var text = $(this).find('p').html()
+						var htl = ''
+						if(data != '') {
+							var pop =[]
+							for(var j = 0; j < data.length; j++) {
+								if(data[j].get_on == text) {
+									pop.push(data[j].get_off);
+								}
+							}
+							var pop1 = []
+							for(var n = 0; n < pop.length; n++) {
+								if(pop1.indexOf(pop[n]) == -1) {
+									pop1.push(pop[n])
+								}
+							}
+							
+							for(var k = 0; k < pop1.length; k++) {
+								htl += '<li><div class="bonn">' + text + '</div>'
+								htl += '<div class="bonn"><i class="iconfont icon-guocheng"></i></div>'
+								htl += '<div class="bonn">' + pop1[k] + '</div></li>'
+
+							}
+							$(this).next('ul').html(htl);
+						}
+
+					});
+				}
+			})
+			$('.xianlu').on('click', '.diz', function() {
+				var valv = $('#sousuo').val().trim();
+				if(valv == ''){
+					$('.diz').removeClass('bor');
+					if($(this).parent('.lu').find('ul').css('display') == 'none') {
+					$(this).addClass('bor');
+					$('ul').hide();
+					$(this).parent('.lu').find('ul').show();
+				} else {
+					$(this).addClass('bor');
+					$(this).parent('.lu').find('ul').hide();
+				}
+				}
+				
+
+			})
+			$('#sousuo').on('blur', function() {
+				var valv = $('#sousuo').val();
+				if(valv != '') {
+					setTimeout(function() {
+						$('#sousuo').val('')
+					}, 100)
+					$.ajax({
+						type: "post",
+						url: "http://dingpiao.ec-8.cn/appuser/getDes.do",
+						data: { "cityName": valv },
+						dataType: "json",
+						success: function(data) {							
+							if(data != '') {
+								function get(){
+									var html = ''
+								for(var i = 0; i < data.length; i++) {
+									html += '<div class="lu"><div class="diz"><p>' + data[i].cityName + '</p></div><ul>'
+									html += '</ul></div>'
+								}
+								$('.xianlu').html(html);
+								}
+								get()
+							} else {
+								$('.xianlu').html('');
+							}
+
+						}
+					})
+				}
+			})
+		</script>
+	</body>
+
+</html>

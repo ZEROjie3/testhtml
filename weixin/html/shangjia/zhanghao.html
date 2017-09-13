@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="css/zhanghao.css" />
+
+		<style type="text/css">
+			.cot {
+				left: 0;
+				top: 0;
+				height: 1.6rem;
+				background: #0991F4;
+				width: 9.466666rem;
+				color: white;
+				position: relative;
+				text-align: center;
+				line-height: 1.6rem;
+				font-size: 0.5rem;
+				position: absolute;
+				z-index: 2;
+				display: none;
+			}
+			
+			.hleft a {
+				width: 100%;
+				height: 100%;
+				display: inline-block;
+				color: white;
+			}
+			
+			#qun {
+				width: 9rem;
+				height: 1rem;
+				text-align: center;
+				line-height: 1rem;
+				font-size: 0.5rem;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head ">
+				<div class="hleft">
+					<a href="zhuye.html">
+						<i class="iconfont icon-gengduo-copy"></i>
+					</a>
+				</div>
+				<div class="hcen">
+					<span>账号管理</span>
+				</div>
+				<div class="hright">
+					<span>管理</span>
+				</div>
+				<div class="quxiao">
+					<span>取消</span>
+				</div>
+			</div>
+		</div>
+		<div class="kong">
+
+		</div>
+
+		<div class="txt">
+			<div class="banxin">
+				<div class="bodyy">
+
+				</div>
+				<div class="add">
+					<a href="zhanghaoxq.html">
+						<i class="iconfont icon-gengduo2"></i>
+						<span>添加用户</span>
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="zhe1">
+
+		</div>
+		<div class="sccg1">
+			<span>请选择车牌号</span>
+		</div>
+		<div class="zhe">
+
+		</div>
+		<div class="tan">
+			<div class="p">
+				<p>提醒</p>
+			</div>
+
+			<div class="textt">
+				<p>确认删除此账号吗？</p>
+			</div>
+			<div class="an">
+				<button class="sure">确定</button><button class="qux">取消</button>
+			</div>
+
+		</div>
+
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var vuserid = [];
+			if(localStorage.getItem('vuserid')) {
+				vuserid = JSON.parse(localStorage.getItem('vuserid'));
+			}
+			if(vuserid == '') {
+				$('body').html('')
+			}
+			if(vuserid != null && vuserid != '') {
+				$('.bodyy').html("<div id='qun'>你的权限不足</div>");
+				$('.add').find('a').attr('href', 'javascript:;');
+
+			}
+
+			if(vuserid == null) {
+				onload();
+
+			}
+
+			
+
+			$('.hright').on('click', function() {
+				if($('.coot').length == 0) {
+					$('.zhe1').show();
+					$('.sccg1').show();
+					$('.sccg1 span').html('请选择管理员')
+					setTimeout(function() {
+						$('.zhe1').hide();
+						$('.sccg1').hide();
+					}, 500)
+					return false;
+				}
+				if($('.hright').css('display') == 'block') {
+					$('.hright ').hide();
+					$('.quxiao').show();
+					if($('.text').hasClass('coot')) {
+						$('.text.coot').find('.cot').show();
+					}
+				}
+			})
+			$('.quxiao').on('click', function() {
+				$('.hright ').show();
+				$('.quxiao').hide();
+				if($('.text').hasClass('coot')) {
+					$('.text.coot').find('.cot').hide();
+					$('.text').removeClass('coot');
+				}
+			})
+			$('.bodyy').on('click', '.text', function() {
+				$('.cot').hide();
+				$('.hright ').show();
+				$('.text').removeClass('coot');
+				$(this).addClass('coot');
+			})
+			var delUserverid = ''
+			$('.bodyy').on('click', '.coot', function() {
+				delUserverid = $(this).attr('id');
+				if($('.quxiao').css('display') == 'block') {
+					$('.zhe').show();
+					$('.tan').show();
+				}
+			})
+			$('.qux').on('click', function() {
+				$('.zhe').hide();
+				$('.tan').hide();
+			})
+			$('.sure').on('click', function() {
+				$.ajax({
+					type: "post",
+					data: { "user_id": delUserverid },
+					url: "http://dingpiao.ec-8.cn/appuser/delUserver.do",
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+						if(data.success) {
+							$('.zhe').hide();
+							$('.tan').hide();
+							$('.zhe1').show();
+							$('.sccg1').show();
+							$('.sccg1 span').html('删除已完成')
+							setTimeout(function() {
+								window.location.reload();
+							}, 1000);
+						} else {
+							alert("删除失败")
+						}
+					},
+
+				});
+			})
+			function onload() {
+				$.ajax({
+					type: "post",
+					url: "http://dingpiao.ec-8.cn/appuser/getUserver.do",
+					dataType: "json",
+					cache: false,
+					ifModified: true,
+					success: function(data) {
+						console.log(data);
+						var html = ''
+						for(var i = 0; i < data.length; i++) {
+							html += '<div class="text" id="' + data[i].USER_ID + '"><p>管理员</p><div class="zhongh">'
+							html += '<div class="zhanghao"><span>账号：</span><span class="zhangh"> ' + data[i].USERNAME + '</span></div><div class="chehao"><span>车牌号：</span><span>' + data[i].NUMBER + '</span></div>'
+							html += '</div><div class="cot"><span>删除此用户</span></div></div>'
+						}
+						$('.bodyy').html(html);
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="css/dingdan.css" />
+		<link rel="stylesheet" type="text/css" href="css/guide.css" />
+		<style type="text/css">
+			.guide_box li:nth-child(2) a {
+				color: #008cf5;
+			}
+			
+			.leirong {
+				width: 10rem;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head ">
+				<div class="box">
+					<div class="i">
+						<a href="zhuye.html"><i class="iconfont icon-gengduo-copy"></i></a>
+					</div>
+					<div class="hd">
+						<span>当前车次管理</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="fun">
+				<ul>
+					<li class="atin quan">
+						<a href="javascrpit:;">全部</a>
+					</li>
+					<li class="you">
+						<a href="javascrpit:;">已完成</a>
+					</li>
+					<li class="tui">
+						<a href="javascrpit:;">未完成</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="kong1">
+
+		</div>
+		<div class="sousuo">
+			<input type="text" name="" id="sousuo" value="" placeholder="搜索" />
+		</div>
+		<!--支付-->
+		<div class="bodyo">
+
+		</div>
+		<div class="tan">
+			<div class="p">
+				<p>提醒</p>
+			</div>
+
+			<div class="text">
+				<p>您确认已收款吗？</p>
+			</div>
+			<div class="an">
+				<button class="sure1">确定</button><button class="qux">取消</button>
+			</div>
+
+		</div>
+		<div class="zhe">
+
+		</div>
+		<div class="zhe1">
+
+		</div>
+		<div class="zhe2">
+
+		</div>
+		<div class="sccg">
+			<span>收款成功！</span>
+		</div>
+		<div class="shouk">
+			<div class="top">
+				<div class="leftt">
+					<span>提示</span>
+				</div>
+				<div class="rightt">
+					<i class="iconfont icon-cuohao1"></i>
+				</div>
+			</div>
+			<div class="shoukzh">
+				<ul>
+					<li>
+						<div class="li1">
+							<span>收款金额</span>
+						</div>
+						<div class="put1">
+							<input type="text" name="meney" id="meney" value="" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');" />
+						</div>
+					</li>
+					<li class="lii">
+						<div class="li2">
+							<span>座  &nbsp;位&nbsp; 号</span>
+						</div>
+						<div class="put2">
+							<input type="text" name="zuoweiz" id="zuoweiz" value="" readonly="readonly" />
+						</div>
+					</li>
+					<li>
+						<div class="li3">
+							<span>备 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     注</span>
+						</div>
+						<div class="put3">
+							<input type="text" name="beizhu" id="beizhu" value="" />
+						</div>
+					</li>
+				</ul>
+				<div class="shoukde">
+					<span>确认收款</span>
+				</div>
+				<div class="shoukbom">
+					<span>PS:请仔细确认 确认后将无法修改！</span>
+				</div>
+			</div>
+
+		</div>
+		<div class="zuowxuan">
+			<div class="top"><span>选择座位</span></div>
+			<ul class="ul">
+
+			</ul>
+			<div class="bnbn">
+				<div class="left_sure">
+					<span>确认</span>
+				</div>
+				<div class="right_qux">
+					<span>取消</span>
+				</div>
+			</div>
+		</div>
+		<!--guide end-->
+		<!--<ul class="guide_box">
+			<li>
+				<a href="#">
+					<i class="iconfont icon-shouye"></i>
+					<p>地区</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="iconfont icon-dingdan"></i>
+					<p>时间段</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="iconfont icon-wode"></i>
+					<p>车型</p>
+				</a>
+			</li>
+			
+		</ul>-->
+		<!--guide end-->
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function GetDateStr(AddDayCount) {
+				var dd = new Date();
+				dd.setDate(dd.getDate() + AddDayCount); //获取AddDayCount天后的日期 
+				var y = dd.getFullYear();
+				var m = dd.getMonth() + 1; //获取当前月份的日期 
+				var d = dd.getDate();
+				if(m > 0 && m < 10 && d >= 10) {
+					return y + "-" + "0" + m + "-" + d;
+				} else if(m > 0 && m < 10 && d < 10) {
+					return y + "-" + "0" + m + "-" + '0' + d;
+				} else if(m >= 10 && d < 10) {
+					return y + "-" + m + "-" + '0' + d;
+				} else if(m >= 10 && d >= 10) {
+					return y + "-" + m + "-" + d;
+				}
+
+			}
+			var vuserid = [];
+			if(localStorage.getItem('vuserid')) {
+				vuserid = JSON.parse(localStorage.getItem('vuserid'));
+			}
+			if(vuserid == '') {
+				$('body').html('')
+			}
+			$.ajax({
+				type: "post",
+				url: "http://dingpiao.ec-8.cn/appuser/getSJOrder.do",
+				data: { "ORDERDATE": GetDateStr(0), "VID": vuserid },
+				dataType: "json",
+				success: function(data) {
+					console.log(data)
+					function get() {
+						var html = ''
+						for(var i = 0; i < data.length; i++) {
+							html += '<div class="leirong" id="' + data[i].ORDERINFO_ID + '" SEAT="' + data[i].SEAT + '" TOTALPRICE="' + data[i].TOTALPRICE + '"><div class="zhifu" style=""><div class="zhixq box"><div class="left">'
+							html += '<p>' + data[i].get_on + ' - ' + data[i].get_off + '（' + data[i].licenseNumber + '）' + '</p><p><span>' + data[i].gosite + '（上）</span>-';
+							html += '<span>'+' '+ data[i].offsite + '（下）</span></p></div>'
+							if(data[i].PAYMENTMODE == 1) {
+								html += '<div class="center" style="background: #19be40;"><span>微信支付</span></div>'
+							} else if(data[i].PAYMENTMODE == 2) {
+								html += '<div class="center" style="background: red;"><span>上车支付</span></div>'
+							} else if(data[i].PAYMENTMODE == 3) {
+								html += '<div class="center" style="background: red;"><span>后台操作</span></div>'
+							}
+							html += '<div class="right"><p class="time">' + data[i].ORDERDATE.substring(0, 11) + '</p>'
+							html += '<p class="xiala"></i></p></div></div></div>'
+							html += '<div class="zhifxq"><ul class="ul box">'
+							if(data[i].PAYMENTMODE == 3) {
+								html += '<li><span class="pan">手机号码：</span><span class="tel">' +' ' +'</span></li>'
+							} else {
+								html += '<li><span class="pan">手机号码：</span><span class="tel">' + data[i].PHONE + '</span></li>'
+							}
+
+							html += '<li><span class="pan">预定票数：</span><span class="num">' + data[i].SEATCOUNT + '</span>张</li>'
+							html += '<li><span class="pan">预定座位：</span><span class="wei">' + data[i].SEAT + '</span></li>'
+							if(data[i].PAYMENTMODE == 1) {
+								html += '<li><span class="pan">付款方式：</span><span class="fkuan">微信支付</span></li>'
+							} else if(data[i].PAYMENTMODE == 2) {
+								html += '<li><span class="pan">付款方式：</span><span class="fkuan">上车支付</span></li>'
+							} else if(data[i].PAYMENTMODE == 3) {
+								html += '<li><span class="pan">付款方式：</span><span class="fkuan">后台操作</span></li>'
+							}
+
+							html += '<li><span class="pan">订单金额：</span>¥' + data[i].TOTALPRICE + '</li>'
+
+							html += '<div class="last"><div class="bun">'
+							if(data[i].STATE != 2  && data[i].STATE == 3) {
+								html += '<span class="pan">实收金额：</span><span class="yang">¥</span> <span class="jin">' + data[i].amountPaid + '</span>'
+							}
+							if(data[i].STATE == 3 || (data[i].PAYMENTMODE == 1 && data[i].STATE != 2)) {
+								html += '</div><div class="bnu"><button class="suree">已完成</button></div>'
+							} else if(data[i].STATE == 2 || data[i].SEAT == '') {
+								html += '<input type="text"  class="shput" value ="' + data[i].TOTALPRICE + '" onkeyup="NumberCheck(this)"/></div><div class="bnu"><button class="sures">已取消</button></div>'
+							} else {
+								html += '<input type="text"  class="shput" value ="' + data[i].TOTALPRICE + '" onkeyup="NumberCheck(this)"/></div><div class="bnu"><button class="sure">确认收款</button></div>'
+							}
+
+							html += '</ul></div></div></div>'
+
+						}
+						$('.bodyo').html(html);
+					}
+					get();
+					$('.fun').on('click', '.quan', function() {
+						var valv = $('#sousuo').val();
+						if(valv == '') {
+							get();
+						}
+
+					})
+
+					function get1() {
+						var html = ''
+						for(var i = 0; i < data.length; i++) {
+							if((data[i].STATE == 3 || data[i].PAYMENTMODE == 1) && data[i].STATE != 2) {
+								html += '<div class="leirong"  id="' + data[i].ORDERINFO_ID + '" SEAT="' + data[i].SEAT + '" TOTALPRICE="' + data[i].TOTALPRICE + '"><div class="zhifu" style=""><div class="zhixq box"><div class="left">'
+								html += '<p>' + data[i].get_on + ' - ' + data[i].get_off + '（' + data[i].licenseNumber + '）' + '</p><p><span>' + data[i].gosite + '（上）</span>-';
+								html += '<span>'+' '+ data[i].offsite + '（下）</span></p></div>'
+								if(data[i].PAYMENTMODE == 1) {
+									html += '<div class="center" style="background: #19be40;"><span>微信支付</span></div>'
+								} else if(data[i].PAYMENTMODE == 2) {
+									html += '<div class="center" style="background: red;"><span>上车支付</span></div>'
+								} else if(data[i].PAYMENTMODE == 3) {
+									html += '<div class="center" style="background: red;"><span>后台操作</span></div>'
+								}
+								html += '<div class="right"><p class="time">' + data[i].ORDERDATE.substring(0, 11) + '</p>'
+								html += '<p class="xiala"></i></p></div></div></div>'
+								html += '<div class="zhifxq"><ul class="ul box">'
+								if(data[i].PAYMENTMODE == 3) {
+									html += '<li><span class="pan">手机号码：</span><span class="tel">' +' ' +'</span></li>'
+								} else {
+									html += '<li><span class="pan">手机号码：</span><span class="tel">' + data[i].PHONE + '</span></li>'
+								}
+								html += '<li><span class="pan">预定票数：</span><span class="num">' + data[i].SEATCOUNT + '</span>张</li>'
+								html += '<li><span class="pan">预定座位：</span><span class="wei">' + data[i].SEAT + '</span></li>'
+								if(data[i].PAYMENTMODE == 1) {
+									html += '<li><span class="pan">付款方式：</span><span class="fkuan">微信支付</span></li>'
+								} else if(data[i].PAYMENTMODE == 2) {
+									html += '<li><span class="pan">付款方式：</span><span class="fkuan">上车支付</span></li>'
+								} else if(data[i].PAYMENTMODE == 3) {
+									html += '<li><span class="pan">付款方式：</span><span class="fkuan">后台操作</span></li>'
+								}
+
+								html += '<li><span class="pan">订单金额：</span>¥' + data[i].TOTALPRICE + '</li>'
+
+								html += '<div class="last"><div class="bun">'
+								if(data[i].STATE != 2  && data[i].STATE == 3) {
+									html += '<span class="pan">实收金额：</span><span class="yang">¥</span> <span class="jin">' + data[i].amountPaid + '</span>'
+								}
+								//						if(data[i].STATE == 3){
+								html += '</div><div class="bnu"><button class="suree">已完成</button></div>'
+								//						}else{
+								//							html += '<input type="text"  class="shput" value ="' + data[i].TOTALPRICE + '" onkeyup="NumberCheck(this)"/></div><div class="bnu"><button class="gai">修改</button><button class="sure">确认收款</button></div>'
+								//						}
+
+								html += '</ul></div></div></div>'
+							}
+						}
+						$('.bodyo').html(html);
+					}
+					$('.fun').on('click', '.you', function() {
+						var valv = $('#sousuo').val();
+						if(valv == '') {
+							get1();
+						}
+					})
+
+					function get2() {
+						var html = ''
+						for(var i = 0; i < data.length; i++) {
+							if(data[i].STATE != 3 && data[i].PAYMENTMODE != 1 && data[i].STATE != 2 && data[i].SEAT != '') {
+								html += '<div class="leirong"  id="' + data[i].ORDERINFO_ID + '" SEAT="' + data[i].SEAT + '" TOTALPRICE="' + data[i].TOTALPRICE + '" licenseState="' + data[i].licenseState + '"><div class="zhifu" style=""><div class="zhixq box"><div class="left">'
+								html += '<p>' + data[i].get_on + ' - ' + data[i].get_off + '（' + data[i].licenseNumber + '）' + '</p><p><span>' + data[i].gosite + '（上）</span>-';
+								html += '<span>'+' '+ data[i].offsite + '（下）</span></p></div>'
+								if(data[i].PAYMENTMODE == 1) {
+									html += '<div class="center" style="background: #19be40;"><span>微信支付</span></div>'
+								} else if(data[i].PAYMENTMODE == 2) {
+									html += '<div class="center" style="background: red;"><span>上车支付</span></div>'
+								} else if(data[i].PAYMENTMODE == 3) {
+									html += '<div class="center" style="background: red;"><span>后台操作</span></div>'
+								}
+								html += '<div class="right"><p class="time">' + data[i].ORDERDATE.substring(0, 11) + '</p>'
+								html += '<p class="xiala"></i></p></div></div></div>'
+								html += '<div class="zhifxq"><ul class="ul box">'
+								if(data[i].PAYMENTMODE == 3) {
+									html += '<li><span class="pan">手机号码：</span><span class="tel">' +' ' +'</span></li>'
+								} else {
+									html += '<li><span class="pan">手机号码：</span><span class="tel">' + data[i].PHONE + '</span></li>'
+								}
+								html += '<li><span class="pan">预定票数：</span><span class="num">' + data[i].SEATCOUNT + '</span>张</li>'
+								html += '<li><span class="pan">预定座位：</span><span class="wei">' + data[i].SEAT + '</span></li>'
+								if(data[i].PAYMENTMODE == 1) {
+									html += '<li><span class="pan">付款方式：</span><span class="fkuan">微信支付</span></li>'
+								} else if(data[i].PAYMENTMODE == 2) {
+									html += '<li><span class="pan">付款方式：</span><span class="fkuan">上车支付</span></li>'
+								} else if(data[i].PAYMENTMODE == 3) {
+									html += '<li><span class="pan">付款方式：</span><span class="fkuan">后台操作</span></li>'
+								}
+
+								html += '<li><span class="pan">订单金额：</span>¥' + data[i].TOTALPRICE + '</li>'
+
+								html += '<div class="last"><div class="bun">'
+								if(data[i].STATE != 2  && data[i].STATE == 3) {
+									html += '<span class="pan">实收金额：</span><span class="yang">¥</span> <span class="jin">' + data[i].amountPaid + '</span>'
+								}
+								if(data[i].STATE == 3) {
+									html += '</div><div class="bnu"><button class="suree">已完成</button></div>'
+								} else if(data[i].STATE == 2 || data[i].SEAT == '') {
+									html += '<input type="text"  class="shput" value ="' + data[i].TOTALPRICE + '" onkeyup="NumberCheck(this)"/></div><div class="bnu"><button class="sures">已取消</button></div>'
+								} else {
+									html += '<input type="text"  class="shput" value ="' + data[i].TOTALPRICE + '" onkeyup="NumberCheck(this)"/></div><div class="bnu"><button class="sure">确认收款</button></div>'
+								}
+
+								html += '</ul></div></div></div>'
+
+							}
+						}
+						$('.bodyo').html(html);
+					}
+
+					$('.fun').on('click', '.tui', function() {
+						var valv = $('#sousuo').val();
+						if(valv == '') {
+							get2();
+						}
+					})
+				}
+			});
+			var id = ''
+			var SEAT = ''
+			var TOTALPRICE = ''
+			var licenseState = ''
+			$('.fun').on('click', 'li', function() {
+				var valv = $('#sousuo').val();
+				if(valv == '') {
+					$('ul li').removeClass('atin');
+					$(this).addClass('atin')
+				}
+
+			})
+
+			$('.bodyo').on('click', '.sure', function() {
+				var valv = $('#sousuo').val();
+				if(valv == '') {
+					$('.shouk').show();
+					$('.zhe1').show();
+					id = $(this).parents('.leirong').attr('id');
+					SEAT = $(this).parents('.leirong').attr('SEAT')
+					TOTALPRICE = $(this).parents('.leirong').attr('TOTALPRICE')
+					licenseState = $(this).parents('.leirong').attr('licenseState')
+					$('#meney').val(TOTALPRICE);
+					$('#zuoweiz').val(SEAT);
+				}
+			})
+
+			$('.rightt').on('click', function() {
+				$('.shouk').hide();
+				$('.zhe1').hide();
+			})
+
+			function shuan() {
+				window.location.reload();
+
+			}
+
+			$('#sousuo').on('blur', function() {
+				var valv = $('#sousuo').val();
+				if(valv != '') {
+					setTimeout(function() {
+						$('#sousuo').val('')
+					}, 100)
+					$.ajax({
+						type: "post",
+						url: "http://dingpiao.ec-8.cn/appuser/getSJOrder.do",
+						data: { "queryInfo": valv, "ORDERDATE": GetDateStr(0), "VID": vuserid },
+						dataType: "json",
+						success: function(data) {
+							console.log(data);
+							if(data != '') {
+								function gett() {
+									var html = ''
+									for(var i = 0; i < data.length; i++) {
+										html += '<div class="leirong" id="' + data[i].ORDERINFO_ID + '" SEAT="' + data[i].SEAT + '" TOTALPRICE="' + data[i].TOTALPRICE + '"><div class="zhifu" style=""><div class="zhixq box"><div class="left">'
+										html += '<p>' + data[i].get_on + ' - ' + data[i].get_off + '（' + data[i].licenseNumber + '）' + '</p><p><span>' + data[i].gosite + '</span>'
+										html += '<span>' + data[i].offsite + '</span></p></div>'
+										if(data[i].PAYMENTMODE == 1) {
+											html += '<div class="center" style="background: #19be40;"><span>微信支付</span></div>'
+										} else if(data[i].PAYMENTMODE == 2) {
+											html += '<div class="center" style="background: red;"><span>上车支付</span></div>'
+										} else if(data[i].PAYMENTMODE == 3) {
+											html += '<div class="center" style="background: red;"><span>后台操作</span></div>'
+										}
+										html += '<div class="right"><p class="time">' + data[i].ORDERDATE.substring(0, 11) + '</p>'
+										html += '<p class="xiala"></i></p></div></div></div>'
+										html += '<div class="zhifxq"><ul class="ul box">'
+										if(data[i].PAYMENTMODE == 3) {
+											html += '<li><span class="pan">手机号码：</span><span class="tel">'+' '+'</span></li>'
+										} else {
+											html += '<li><span class="pan">手机号码：</span><span class="tel">' + data[i].PHONE + '</span></li>'
+										}
+										html += '<li><span class="pan">预定票数：</span><span class="num">' + data[i].SEATCOUNT + '</span>张</li>'
+										html += '<li><span class="pan">预定座位：</span><span class="wei">' + data[i].SEAT + '</span></li>'
+										if(data[i].PAYMENTMODE == 1) {
+											html += '<li><span class="pan">付款方式：</span><span class="fkuan">微信支付</span></li>'
+										} else if(data[i].PAYMENTMODE == 2) {
+											html += '<li><span class="pan">付款方式：</span><span class="fkuan">上车支付</span></li>'
+										} else if(data[i].PAYMENTMODE == 3) {
+											html += '<li><span class="pan">付款方式：</span><span class="fkuan">后台操作</span></li>'
+										}
+
+										html += '<li><span class="pan">订单金额：</span>¥' + data[i].TOTALPRICE + '</li>'
+
+										html += '<div class="last"><div class="bun">'
+										if(data[i].STATE != 2  && data[i].STATE == 3) {
+											html += '<span class="pan">实收金额：</span><span class="yang">¥</span> <span class="jin">' + data[i].amountPaid + '</span>'
+										}
+										if(data[i].STATE == 3 || data[i].PAYMENTMODE == 1) {
+											html += '</div><div class="bnu"><button class="suree">已完成</button></div>'
+										} else if(data[i].STATE == 2 || data[i].SEAT == '') {
+											html += '<input type="text"  class="shput" value ="' + data[i].TOTALPRICE + '" onkeyup="NumberCheck(this)"/></div><div class="bnu"><button class="sures">已取消</button></div>'
+										} else {
+											html += '<input type="text"  class="shput" value ="' + data[i].TOTALPRICE + '" onkeyup="NumberCheck(this)"/></div><div class="bnu"><button class="sure">确认收款</button></div>'
+										}
+
+										html += '</ul></div></div></div>'
+
+									}
+									$('.bodyo').html(html);
+								}
+								gett()
+							} else {
+								$('.bodyo').html('');
+							}
+
+						}
+					})
+				}
+			})
+			$('.lii').on('click', function() {
+				$(".zuowxuan").show();
+				$(".zhe2").show();
+				var uop = SEAT.split(',')
+				console.log(uop);
+				var hml = ''
+				for(var k = 0; k < uop.length; k++) {
+					hml += '<li>' + uop[k] + '</li>'
+				}
+				$(".zuowxuan .ul").html(hml);
+			})
+			$('.right_qux').on('click', function() {
+				$(".zuowxuan").hide();
+				$(".zhe2").hide();
+			})
+			var zuoweiw = []
+			var zuoweiw1 = []
+			$('.zuowxuan .ul').on('click', "li", function() {
+				if($(this).hasClass("cortor")) {
+					$(this).removeClass("cortor")
+				} else {
+					$(this).addClass("cortor")
+				}
+
+			})
+			$('.left_sure').on('click', function() {
+				$(".zuowxuan").hide();
+				$(".zhe2").hide();
+				var cortor = $('.cortor');
+				if($('.cortor').length == 0) {
+					$('#zuoweiz').val(SEAT);
+				} else {
+					for(var i = 0; i < $('.cortor').length; i++) {
+						zuoweiw.push($(cortor[i]).html());
+					}
+					for(var m = 0; m < zuoweiw.length; m++) {
+						if(zuoweiw1.indexOf(zuoweiw[m]) == -1) {
+							zuoweiw1.push(zuoweiw[m]);
+						}
+					}
+					$('#zuoweiz').val(zuoweiw1);
+					zuoweiw = []
+					zuoweiw1 = []
+				}
+			})
+			$('.shoukde').on('click', function() {
+				var tatol = $('#meney').val();
+				if(tatol == '') {
+					$('.zhe').show()
+					$('.sccg').show();
+					$('.sccg').html('请输入价格')
+				} else {
+					$('.tan').show();
+					$('.zhe').show();
+				}
+
+			})
+			$('.zhe').on('click', function() {
+				$('.zhe').hide()
+				$('.sccg').hide();
+
+			})
+			$('.an .qux').on('click', function() {
+				$('.tan').hide()
+				$('.zhe').hide()
+
+			})
+			$('.sure1').on('click', function() {
+				$('.tan').hide();
+				$('.zhe').hide();
+				var setzuo = $('#zuoweiz').val();
+				var BEITXT = $('#beizhu').val();
+				var tatol = $('#meney').val();
+				var zwset = [];
+				zwset.push(setzuo);
+				if(tatol == '') {
+					$('.zhe').show()
+					$('.sccg').show();
+					$('.sccg').html('请输入价格')
+				}
+				if(tatol != '') {
+					$.ajax({
+						type: "post",
+						url: "http://dingpiao.ec-8.cn/appuser/updataState.do",
+						data: { "order_id": id, "state": 3, "VID": vuserid, "SEAT": setzuo, "amountPaid": tatol, "remark": BEITXT, },
+						dataType: "json",
+						success: function(data) {
+							if(data.success) {
+								$('.shouk').hide()
+								$('.zhe').show()
+								$('.sccg').show();
+								setTimeout(function() {
+									shuan();
+								}, 300)
+
+							} else {
+								alert('收款失败')
+							}
+						}
+
+					});
+				}
+
+			})
+		</script>
+	</body>
+
+</html>

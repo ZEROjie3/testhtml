@@ -1,0 +1,257 @@
+.box {
+	width: 9.386666rem;
+	margin: 0 auto;
+}
+
+.head {
+	width: 10rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	background: white;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.i {
+	float: left;
+	width: 1rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+}
+
+.i a {
+	color: #000000;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+.hd {
+	float: left;
+	width: 7rem;
+	height: 1.2rem;
+	text-align: center;
+	font-size: 0.4rem;
+	line-height: 1.2rem;
+}
+
+.center {
+	width: 10rem;
+	height: 2.72rem;
+	background: #008cf5;
+}
+
+.ter {
+	width: 9.386666rem;
+	height: 2.72rem;
+	margin: 0 auto;
+}
+
+.p1 {
+	padding-top: 0.693333rem;
+	font-size: 0.533333rem;
+	color: white;
+}
+
+.p2 {
+	margin-top: 0.213333rem;
+	font-size: 0.32rem;
+	color: white;
+}
+
+.kong {
+	width: 10rem;
+	height: 0.32rem;
+	margin: 0 auto;
+}
+
+.wei0 {
+	width: 10rem;
+	margin: 0 auto;
+	background: white;
+	padding-bottom: 0.666666rem;
+}
+
+.kong1 {
+	width: 10rem;
+	height: 0.373333rem;
+	background: #f9f9f9;
+	margin: 0 auto;
+}
+
+#sure {
+	width: 8.933333rem;
+	height: 1.173333rem;
+	margin: 0 auto;
+	background: #ff5857;
+	border-radius: 7px;
+	text-align: center;
+	font-size: 0.453333rem;
+	line-height: 1.173333rem;
+	font-size: 0.453333rem;
+	color: white;
+}
+
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+body {
+	line-height: 1;
+	font-family: "微软雅黑";
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+
+/* remember to define focus styles! */
+
+:focus {
+	outline: 0;
+}
+
+
+/* remember to highlight inserts somehow! */
+
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+
+/* tables still need 'cellspacing="0"' in the markup */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+i {
+	font-style: normal;
+	font-weight: 400;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+html,
+body {
+	background: #f2f2f2;
+}
+
+.mrgiBot {
+	margin-bottom: 0.133333rem;
+}
+
+.brdBot {
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.brdRig {
+	border-right: 1px solid #d9d9d9;
+}

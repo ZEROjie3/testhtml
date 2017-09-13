@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+			<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="css/chezuo.css" />
+		<link rel="stylesheet" type="text/css" href="css/guide.css" />
+		<style type="text/css">
+			.boydy {
+				width: 10rem;
+				margin: 0 auto;
+				margin-bottom: 1.5rem;
+			}
+			
+			.clik a {
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head ">
+				<div class="box">
+
+					<div class="i">
+						<a href="index.html"><i class="iconfont icon-gengduo-copy"></i></a>
+					</div>
+					<div class="hd">
+						<span>车座管理</span>
+					</div>
+				</div>
+			</div>
+			<div class="rq">
+				<div class="lq">
+					<div class="sanjiao">
+
+					</div>
+					<div class="lqt">
+						<span>前一天</span>
+					</div>
+				</div>
+				<div class="cz">
+
+				</div>
+				<div class="rh">
+					<div class="sanjiao1">
+
+					</div>
+					<div class="rqt">
+						<span>后一天</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="kong">
+
+		</div>
+		<div class="sousuo">
+			<input type="text" name="" id="sousuo" value="" placeholder="搜索" />
+		</div>
+		<div class="boydy">
+
+			
+		</div>
+
+		<!--guide end-->
+		<!--<ul class="guide_box">
+			<li>
+				<a href="#">
+					<i class="iconfont icon-qichepiao"></i>
+					<p>地区</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="iconfont icon-1-03"></i>
+					<p>时间段</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="iconfont icon-mg-time-up"></i>
+					<p>车型</p>
+				</a>
+			</li>
+			
+		</ul>-->
+		<!--guide end-->
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			function GetDateStr(AddDayCount) {
+				var dd = new Date();
+				dd.setDate(dd.getDate() + AddDayCount); //获取AddDayCount天后的日期 
+				var y = dd.getFullYear();
+				var m = dd.getMonth() + 1; //获取当前月份的日期 
+				var d = dd.getDate();
+				if(m > 0 && m < 10 && d >= 10) {
+					return "0" + m + "月" + d + "日";
+				} else if(m > 0 && m < 10 && d < 10) {
+					return "0" + m + "月" + '0' + d + "日";
+				} else if(m >= 10 && d < 10) {
+					return m + "月" + '0' + d + "日";
+				} else if(m >= 10 && d >= 10) {
+					return m + "月" + d + "日";
+				}
+			}
+
+			function GetDateStr1(AddDayCount) {
+				var dd = new Date();
+				dd.setDate(dd.getDate() + AddDayCount); //获取AddDayCount天后的日期 
+				var y = dd.getFullYear();
+				var m = dd.getMonth() + 1; //获取当前月份的日期 
+				var d = dd.getDate();
+				if(m > 0 && m < 10 && d >= 10) {
+					return y + "-" + "0" + m + "-" + d;
+				} else if(m > 0 && m < 10 && d < 10) {
+					return y + "-" + "0" + m + "-" + '0' + d;
+				} else if(m >= 10 && d < 10) {
+					return y + "-" + m + "-" + '0' + d;
+				} else if(m >= 10 && d >= 10) {
+					return y + "-" + m + "-" + d;
+				}
+			}
+			//			console.log(GetDateStr1(0));
+			var pp = new Date();
+			var p = pp.getFullYear();
+			$('.cz').html(GetDateStr(0) + " 今天" + '');
+			var popp = p + '-' + GetDateStr(0).replace('月', '-');
+			var timmer1 = popp.substring(0, (popp.length - 1))
+			localStorage.setItem('timmer', JSON.stringify(timmer1));
+			var timmer = []
+			if(localStorage.getItem('timmer')) {
+				timmer = JSON.parse(localStorage.getItem('timmer'));
+
+			}
+			$.ajax({
+				type: "post",
+				url: "http://dingpiao.ec-8.cn/appuser/getShift.do",
+				data: { "ORDERDATE": GetDateStr1(0) },
+				dataType: "json",
+				success: function(data) {
+					console.log(data);
+					function get() {
+						var html = ''
+						for(var i = 0; i < data.length; i++) {
+							html += '<div class="kong1"></div><div class="xiangxi" ticlass="' + data[i].licenseState + '" tihao="' + data[i].licenseNumber + '" titime="' + data[i].gotime + '" tiid="' + data[i].shift_id + '" tion="' + data[i].get_on + '" tioff="' + data[i].get_off + '"  tivid="' + data[i].vid + '" timeney="' + data[i].price + '"><a href="javascript:;"><div class="xiang"><div class="lft">'
+							if( data[i].licenseState == 2){
+									html += '<div class="chtext"><p>' + data[i].get_on + '-' + data[i].get_off + '（' + data[i].licenseNumber + '）'+'（'+'卧'+'）' + '</p></div><div class="xleft">'
+								}else{
+									html += '<div class="chtext"><p>' + data[i].get_on + '-' + data[i].get_off + '（' + data[i].licenseNumber + '）' + '</p></div><div class="xleft">'
+								}
+							html += '<span>' + data[i].gotime.substring(0, 5) + '</span></div><div class="xcen"><div class="xianlu"><div class="yon">'
+							html += '</div><div class="yuan"></div><div class="xian"></div><div class="yuan">'
+							html += '</div></div><div class="xiant"><p>' + data[i].gosite + '</p><p>' + data[i].offsite + '</p></div></div></div>'
+							html += '<div class="xright"><div class="yupo"><p>余票:<span>' + data[i].remainingSeats + '</span></p> </div>'
+							html += '<p><button class="clik">查看余票</button></p></div></div></a></div>'
+						}
+						$('.boydy').html(html);
+					}
+					get();
+
+				}
+			});
+			$('.rqt').on('click', function() {
+				var pp = new Date();
+				var h = '';
+				localStorage.removeItem("timmer");
+				if($('.cz').html() == GetDateStr(0) + " 今天" + '' && GetDateStr(0) == '12月31日') {
+					$('.cz').html(GetDateStr(1) + " 明天" + '');
+					popp = GetDateStr(1)
+					popp = popp.replace("月", '-');
+					popp = popp.replace("日", '');
+					h = pp.getFullYear() + 1
+					timmer = h + '-' + popp;
+					localStorage.setItem('timmer', JSON.stringify(timmer));
+
+				} else if($('.cz').html() == GetDateStr(0) + " 今天" + '' && GetDateStr(0) != '12月31日') {
+					$('.cz').html(GetDateStr(1) + " 明天" + '');
+					popp = GetDateStr(1)
+					popp = popp.replace("月", '-');
+					popp = popp.replace("日", '');
+					h = pp.getFullYear()
+					timmer = h + '-' + popp;
+					localStorage.setItem('timmer', JSON.stringify(timmer));
+
+				}
+				if($('.cz').html() == GetDateStr(1) + " 明天" + '') {
+					$('.cz').html(GetDateStr(1) + " 明天" + '');
+					popp = GetDateStr(1)
+					popp = popp.replace("月", '-');
+					popp = popp.replace("日", '');
+					h = pp.getFullYear()
+					timmer = h + '-' + popp;
+					localStorage.setItem('timmer', JSON.stringify(timmer));
+
+				}
+				if($('.cz').html() == GetDateStr(-1) + " 昨天" + '') {
+					$('.cz').html(GetDateStr(0) + " 今天" + '');
+					popp = GetDateStr(0);
+					popp = popp.replace("月", '-');
+					popp = popp.replace("日", '');
+					h = pp.getFullYear()
+					timmer = h + '-' + popp;
+					localStorage.setItem('timmer', JSON.stringify(timmer));
+
+				}
+				$.ajax({
+					type: "post",
+					url: "http://dingpiao.ec-8.cn/appuser/getShift.do",
+					data: { "ORDERDATE": timmer },
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+
+						function get() {
+							var html = ''
+							for(var i = 0; i < data.length; i++) {
+									html += '<div class="kong1"></div><div class="xiangxi" ticlass="' + data[i].licenseState + '" tihao="' + data[i].licenseNumber + '" titime="' + data[i].gotime + '" tiid="' + data[i].shift_id + '" tion="' + data[i].get_on + '" tioff="' + data[i].get_off + '"  tivid="' + data[i].vid + '" timeney="' + data[i].price + '"><a href="javascript:;"><div class="xiang"><div class="lft">'
+								if( data[i].licenseState == 2){
+									html += '<div class="chtext"><p>' + data[i].get_on + '-' + data[i].get_off + '（' + data[i].licenseNumber + '）'+'（'+'卧'+'）' + '</p></div><div class="xleft">'
+								}else{
+									html += '<div class="chtext"><p>' + data[i].get_on + '-' + data[i].get_off + '（' + data[i].licenseNumber + '）' + '</p></div><div class="xleft">'
+								}
+								html += '<span>' + data[i].gotime.substring(0, 5) + '</span></div><div class="xcen"><div class="xianlu"><div class="yon">'
+								html += '</div><div class="yuan"></div><div class="xian"></div><div class="yuan">'
+								html += '</div></div><div class="xiant"><p>' + data[i].gosite + '</p><p>' + data[i].offsite + '</p></div></div></div>'
+								html += '<div class="xright"><div class="yupo"><p>余票:<span>' + data[i].remainingSeats + '</span></p> </div>'
+								html += '<p><button class="clik">查看余票</button></p></div></div></a>	</div>'
+							}
+							$('.boydy').html(html);
+						}
+						get();
+
+					}
+				});
+
+			})
+			$('.lqt').on('click', function() {
+				localStorage.removeItem("timmer");
+				var h = '';
+				if($('.cz').html() == GetDateStr(0) + " 今天" + '' && GetDateStr(0) == '01月01日') {
+					$('.cz').html(GetDateStr(-1) + " 昨天" + '');
+					popp = GetDateStr(-1)
+					popp = popp.replace("月", '-');
+					popp = popp.replace("日", '');
+					h = pp.getFullYear() - 1
+					timmer = h + '-' + popp;
+					localStorage.setItem('timmer', JSON.stringify(timmer));
+
+				} else if($('.cz').html() == GetDateStr(0) + " 今天" + '' && GetDateStr(0) != '01月01日') {
+					$('.cz').html(GetDateStr(-1) + " 昨天" + '');
+					popp = GetDateStr(-1)
+					popp = popp.replace("月", '-');
+					popp = popp.replace("日", '');
+					h = pp.getFullYear()
+					timmer = h + '-' + popp;
+					localStorage.setItem('timmer', JSON.stringify(timmer));
+
+				}
+				if($('.cz').html() == GetDateStr(1) + " 明天" + '') {
+					$('.cz').html(GetDateStr(0) + " 今天" + '');
+					popp = GetDateStr(0)
+					popp = popp.replace("月", '-');
+					popp = popp.replace("日", '');
+					h = pp.getFullYear()
+					timmer = h + '-' + popp;
+					localStorage.setItem('timmer', JSON.stringify(timmer));
+
+				}
+				if($('.cz').html() == +GetDateStr(-1) + " 昨天" + '') {
+					$('.cz').html(GetDateStr(-1) + " 昨天" + '');
+					popp = GetDateStr(-1)
+					popp = popp.replace("月", '-');
+					popp = popp.replace("日", '');
+					h = pp.getFullYear()
+					timmer = h + '-' + popp;
+					localStorage.setItem('timmer', JSON.stringify(timmer));
+
+				}
+				$.ajax({
+					type: "post",
+					url: "http://dingpiao.ec-8.cn/appuser/getShift.do",
+					data: { "ORDERDATE": timmer },
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+
+						function get() {
+							var html = ''
+							for(var i = 0; i < data.length; i++) {
+									html += '<div class="kong1"></div><div class="xiangxi" ticlass="' + data[i].licenseState + '" tihao="' + data[i].licenseNumber + '" titime="' + data[i].gotime + '" tiid="' + data[i].shift_id + '" tion="' + data[i].get_on + '" tioff="' + data[i].get_off + '"  tivid="' + data[i].vid + '" timeney="' + data[i].price + '"><a href="javascript:;"><div class="xiang"><div class="lft">'
+								if( data[i].licenseState == 2){
+									html += '<div class="chtext"><p>' + data[i].get_on + '-' + data[i].get_off + '（' + data[i].licenseNumber + '）'+'（'+'卧'+'）' + '</p></div><div class="xleft">'
+								}else{
+									html += '<div class="chtext"><p>' + data[i].get_on + '-' + data[i].get_off + '（' + data[i].licenseNumber + '）' + '</p></div><div class="xleft">'
+								}
+								
+								html += '<span>' + data[i].gotime.substring(0, 5) + '</span></div><div class="xcen"><div class="xianlu"><div class="yon">'
+								html += '</div><div class="yuan"></div><div class="xian"></div><div class="yuan">'
+								html += '</div></div><div class="xiant"><p>' + data[i].gosite + '</p><p>' + data[i].offsite + '</p></div></div></div>'
+								html += '<div class="xright"><div class="yupo"><p>余票:<span>' + data[i].remainingSeats + '</span></p> </div>'
+								html += '<p><button class="clik">查看余票</button></p></div></div></a>	</div>'
+							}
+							$('.boydy').html(html);
+						}
+						get();
+
+					}
+				});
+			})
+
+			$('.boydy').on('click', '.xiangxi', function() {
+
+				var licen = $(this).attr('ticlass');
+				var chehao = $(this).attr('tihao');
+				var chetime = $(this).attr('titime');
+				var cheid = $(this).attr('tiid');
+				var geton = $(this).attr('tion');
+				var getoff = $(this).attr('tioff');
+				var vid = $(this).attr('tivid');
+				var meney =$(this).attr('timeney');
+				//				  	chetime =chetime.substring(11,(chetime.length));
+
+				console.log(chetime);
+				$.ajax({
+					type: "post",
+					url: "http://dingpiao.ec-8.cn/appuser/getOrder.do",
+					data: { "ORDERDATE": timmer, "ORDERTIME": chetime, "SID": cheid },
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+
+					}
+				});
+				localStorage.setItem('chehao', JSON.stringify(chehao));
+				localStorage.setItem('chetime', JSON.stringify(chetime));
+				localStorage.setItem('checheid', JSON.stringify(cheid));
+				localStorage.setItem('geton', JSON.stringify(geton));
+				localStorage.setItem('getoff', JSON.stringify(getoff));
+				localStorage.setItem('vid', JSON.stringify(vid));
+				localStorage.setItem('meney', JSON.stringify(meney));
+
+				if(licen == 1) {
+					$(this).find('a').attr('href', 'yupiaozuo.html')
+				} else if(licen == 2) {
+					$(this).find('a').attr('href', 'yupiaowo.html')
+				}
+			})
+		</script>
+	</body>
+
+</html>

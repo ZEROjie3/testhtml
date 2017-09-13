@@ -1,0 +1,138 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+}
+body {line-height: 1;font-family: "微软雅黑";}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+
+/* remember to define focus styles! */
+:focus {outline: 0;}
+
+/* remember to highlight inserts somehow! */
+ins {text-decoration: none;}
+del {	text-decoration: line-through;}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: collapse;border-spacing: 0;}
+i {
+	font-style: normal;
+	font-weight: 400;
+}
+a{
+text-decoration:none;
+}
+a:link{
+text-decoration:none;
+}
+a:visited{
+text-decoration:none;
+}
+a:hover{
+text-decoration:none;
+}
+a:active{
+text-decoration:none;
+}
+html,body{
+	background: #f9f9f9;
+}
+.mrgiBot{
+	margin-bottom: 0.133333rem;
+}
+.brdBot{
+	border-bottom: 1px solid #d9d9d9;
+}
+.brdRig{
+	border-right: 1px solid #d9d9d9;
+}
+/*footer go*/
+.footer_box{
+	width: 100%;
+	background: white;
+	
+}
+.footer_box .footer{
+	width: 10rem;
+	margin: 0 auto;
+	padding: 0.4rem 0;
+}
+.footer_box .footer .footer_text{
+	display: flex;
+	width: 8rem;
+	margin: 0 auto;
+}
+.footer_box .footer .footer_text li{
+	width: 25%;
+	text-align: center;
+	
+}
+.footer_box .footer .footer_text li i{
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: #555555;
+	display: block;
+}
+.footer_box .footer .footer_text li p{
+	color: #2e2e2e;
+	font-size: 12px;
+	margin-top: 0.186666rem;
+	text-align: center;
+}
+.footer_box .footer .footer_p{
+	font-size: 12px;
+	color: #a3a3a3;
+	text-align: center;
+	margin-top: 0.4rem;
+}
+/*footer end*/
+/*guide go*/
+.guide_box{
+	width: 100%;
+	display: flex;
+	background: white;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 9999;
+	padding: 0.16rem;
+	border-top: 1px solid gainsboro;
+	/*box-shadow: 0 0 15px #d9d8d8;*/
+	box-sizing: border-box;
+	
+}
+.guide_box li{
+	flex: 1;
+	
+}
+.guide_box li a{
+	color: #555555;
+	text-align: center;
+}
+.guide_box li a i{
+	font-size:20px;
+	display: block;
+	margin-top: 0.1rem;
+	margin-bottom: 0.133333rem;
+	
+}
+.guide_box li a p{
+	font-size:0.373333rem;
+	margin-top: 0.2rem;
+}
+/*guide end*/

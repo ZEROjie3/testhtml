@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+			<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="css/zhanghaoxq.css" />
+		<style type="text/css">
+			.i {
+				color: #c2c2c2;
+			}
+			
+			.qxx {
+				display: none;
+			}
+			
+			.srue a {
+				width: 100%;
+			}
+			
+			.hleft a {
+				width: 100%;
+				height: 100%;
+				display: inline-block;
+				color: white;
+			}
+			.kongk{
+				width: 10rem;
+				height: 0.266666rem;
+				margin: 0 auto;
+				background: #f9f9f9;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head ">
+				<div class="hleft">
+					<a href="zhanghao.html"><i class="iconfont icon-gengduo-copy"></i></a>
+				</div>
+				<div class="hcen">
+					<span>账号管理</span>
+				</div>
+			</div>
+		</div>
+		<div class="kong">
+
+		</div>
+		<div class="kongk">
+
+		</div>
+		<div class="name">
+			<div class="xin">
+				<span>车牌号</span>
+			</div>
+			<div class="nam">
+				<input type="text" name="" id="name" value="" placeholder="车牌号" readonly="readonly"/>
+			</div>
+
+		</div>
+		<div class="kongk">
+
+		</div>
+		<div class="account">
+			<div class="zhg">
+				<span>账&nbsp;&nbsp;&nbsp;&nbsp;号</span>
+			</div>
+			<div class="count">
+				<input type="text" name="" id="account" value="" placeholder="请填写账号" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"/>
+			</div>
+
+		</div>
+		<div class="kongk">
+
+		</div>
+		<div class="password">
+			<div class="mima">
+				<span>密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+			</div>
+			<div class="pass">
+				<input type="password" name="" id="password" value="" placeholder="请填写密码" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"/>
+			</div>
+
+		</div>
+		<div class="chepaip">
+			<div class="chebox">
+				<div class="top">
+					<span>选择车牌号</span>
+				</div>
+			<ul class="ul">
+				
+			</ul>
+			<div class="nbx">
+				<div class="left">
+					<span>确定</span>
+				</div>
+				<div class="right">
+					<span>取消</span>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!--<div class="quanxian">
+			<div class="box">
+				<div class="qx">
+					<div class="span">
+						<span>权限</span>
+					</div>
+					<div class="i">
+						<i class="iconfont icon-xiala"></i>
+					</div>
+
+				</div>
+				<div class="qxx">
+					<div class="xianq">
+						<div class="text">
+							<span>&nbsp;&nbsp;车辆管理</span>
+						</div>
+						<div class="input">
+							<input type="checkbox" class="put" />
+						</div>
+
+					</div>
+					<div class="xianq">
+						<div class="text">
+							<span>&nbsp;&nbsp;路线管理</span>
+						</div>
+						<div class="input">
+							<input type="checkbox" class="put" />
+						</div>
+
+					</div>
+					<div class="xianq">
+						<div class="text">
+							<span>&nbsp;&nbsp;座位管理</span>
+						</div>
+						<div class="input">
+							<input type="checkbox" class="put" />
+						</div>
+
+					</div>
+					<div class="xianq">
+						<div class="text">
+							<span>&nbsp;&nbsp;订单管理</span>
+						</div>
+						<div class="input">
+							<input type="checkbox" class="put" />
+						</div>
+
+					</div>
+					<div class="xianq">
+						<div class="text">
+							<span>&nbsp;&nbsp;财务管理</span>
+						</div>
+						<div class="input">
+							<input type="checkbox" class="put" />
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>-->
+		<div class="zhu">
+			<div class="srue">
+				<span>确认</span>
+			</div>
+			<div class="quxiao">
+				<span>重置</span><!--<input type="button" id="qu" value="取消" />-->
+			</div>
+		</div>
+
+		<div class="zhe">
+
+		</div>
+		<div class="sccg">
+			<span></span>
+		</div>
+		<div class="zhe1">
+
+		</div>
+		<div class="sccg1">
+			<span>请选择车牌号</span>
+		</div>
+		<div class="tan">
+			<div class="p">
+				<p>提醒</p>
+			</div>
+
+			<div class="text">
+				<p>确认添加此账号吗？</p>
+			</div>
+			<div class="an">
+				<button class="sure">确定</button><button class="qux">取消</button>
+			</div>
+
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			
+			$('.srue').on('click',function(){
+				var password = $('#password').val().trim();
+				var account = $('#account').val().trim();
+				var name = $('#name').val().trim();
+				if(password == ''){
+					$('.zhe').show();
+					$('.sccg').show();
+					$('.sccg span').html('请输入密码');
+					
+				}
+				if(account == ''){
+					$('.zhe').show();
+					$('.sccg').show();
+					$('.sccg span').html('请输入账号');
+					
+				}
+				if(name == ''){
+					$('.zhe').show();
+					$('.sccg').show();
+					$('.sccg span').html('请输入车牌号');
+					
+				}
+				if(password != '' && account != '' && name != '' ){
+					$('.tan').show();
+					$('.zhe').show();
+				}
+			})
+			
+			$('.zhe').on('click',function(){
+				$('.sccg').hide();
+				$('.zhe').hide();
+				$('.tan').hide();
+				$('.chepaip').hide();
+			})
+			$('.qux').on('click',function(){
+				$('.zhe').hide();
+				$('.tan').hide();
+			})
+			$('.quxiao').on('click',function(){
+				$('#password').val('');
+				 $('#account').val('');
+				 $('#name').val('');
+			})
+			$('.sccg').on('click',function(){
+				$('.sccg').hide();
+				$('.zhe').hide();
+				
+			})
+			$('#name').on('click',function(){
+				$.ajax({
+				type: "post",
+				url: "http://192.168.1.110:8090/appuser/getverinfo.do",
+				dataType: "json",
+				success: function(data) {
+					var html =''
+					for(var i=0;i<data.length;i++){
+						html+='<li>'+data[i].LICENSENUMBER+'</li>'
+					}
+					$('.chebox .ul').html(html)
+					
+				}
+			});
+			$('.chepaip').show()
+			$('.zhe').show()
+			})
+			$('.zhe1').on('click',function(){
+				$('.sccg1').hide()
+				$('.zhe1').hide()
+			})
+			$('.sccg1').on('click',function(){
+				$('.sccg1').hide()
+				$('.zhe1').hide()
+			})
+			$('.chebox .ul').on('click','li',function(){
+				if($(this).hasClass('coro')){
+					$('.chebox .ul li').removeClass('coro')
+				}else{
+					$('.chebox .ul li').removeClass('coro')
+					$(this).addClass('coro')
+				}
+			})
+			$('.chebox .right').on('click',function(){
+				$('.chepaip').hide()
+				$('.zhe').hide()
+			})
+			$('.chebox .left').on('click',function(){
+				if( $('.coro').length ==0){
+					$('.zhe1').show();
+					$('.sccg1').show();
+					return false;
+				}
+				var chetext = $('.coro').html()
+				$('.chepaip').hide()
+				$('.zhe').hide()
+				$("#name").val(chetext)
+				
+			})
+			$('.sure').on('click',function(){
+				var password = $('#password').val().trim();
+				var account = $('#account').val().trim();
+				var name = $('#name').val().trim();
+				$.ajax({
+				type: "post",
+				url: "http://192.168.1.110:8090/appuser/saveU.do",
+				data: { "NUMBER": name, "PASSWORD": password, "USERNAME": account  },
+				dataType: "json",
+				success: function(data) {
+					if(data.success){
+						$('.tan').hide();
+						$('.sccg').show();
+						$('.zhe').show();
+						$('.sccg span').html('添加账号成功');
+						setTimeout(function(){
+							$('.sccg').hide();
+							$('.zhe').hide();
+							window.location.href="zhanghao.html"
+						},500)
+					}else if(data.msg =="账号已存在"){
+						alert("账号已存在")
+					}else{
+						alert("添加账号失败")
+					}
+				}
+			});
+				
+			})
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+			<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="css/yupiaowo.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head ">
+				<div class="box">
+					<div class="i">
+						<a href="cheliang.html"><i class="iconfont icon-gengduo-copy"></i></a>
+					</div>
+					<div class="hd">
+						<span>座位选择</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="kong">
+
+		</div>
+		<div class="quan">
+
+			<div class="banxin">
+				<span>粤GW0606(卧)</span>
+			</div>
+			<div class="xuan">
+				<div class="left">
+					<div class="tu">
+
+					</div>
+					<div class="text">
+						<p>已选</p>
+					</div>
+
+				</div>
+				<div class="center">
+					<div class="tu">
+
+					</div>
+					<div class="text">
+						<p>可选</p>
+					</div>
+
+				</div>
+				<div class="right">
+					<div class="tu">
+
+					</div>
+					<div class="text">
+						<p>已售</p>
+					</div>
+				</div>
+				<div class="right1">
+					<div class="tu">
+
+					</div>
+					<div class="text">
+						<p>锁定</p>
+					</div>
+				</div>
+			</div>
+			<div class="wzi">
+				<div class="top">
+					<span>头部</span>
+				</div>
+				<div class="wleft">
+					<div class="wleft1">
+						<ul>
+							<li>1上</li>
+							<li>4上</li>
+							<li>7上</li>
+							<li>10上</li>
+							<li>13上</li>
+							<li>16上</li>
+							<li>19上</li>
+						</ul>
+					</div>
+					<div class="wleft2">
+						<ul>
+							<li>1下</li>
+							<li>4下</li>
+							<li>7下</li>
+							<li>10下</li>
+							<li>13下</li>
+							<li>16下</li>
+							<li>19下</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="guo">
+					<p>过</p>
+					<p>道</p>
+				</div>
+				<div class="zhong">
+					<div class="wleft1">
+						<ul>
+							<li>2上</li>
+							<li>5上</li>
+							<li>8上</li>
+							<li>11上</li>
+							<li>14上</li>
+							<li>17上</li>
+
+						</ul>
+					</div>
+					<div class="wleft2">
+						<ul>
+							<li>2下</li>
+							<li>5下</li>
+							<li>8下</li>
+							<li>11下</li>
+							<li>14下</li>
+							<li>17下</li>
+
+						</ul>
+					</div>
+					<div class="dguo">
+						<span>过道</span>
+					</div>
+				</div>
+				<div class="guo">
+					<p>过</p>
+					<p>道</p>
+				</div>
+				<div class="wleft">
+					<div class="wleft1">
+						<ul>
+							<li>3上</li>
+							<li>6上</li>
+							<li>9上</li>
+							<li>12上</li>
+							<li>15上</li>
+							<li>18上</li>
+
+						</ul>
+					</div>
+					<div class="wleft2">
+						<ul>
+							<li>3下</li>
+							<li>6下</li>
+							<li>9下</li>
+							<li>12下</li>
+							<li>15下</li>
+							<li>18下</li>
+
+						</ul>
+					</div>
+					<div class="dguo">
+						<span>洗手间</span>
+					</div>
+				</div>
+
+				<div class="bon">
+					<span>尾部</span>
+				</div>
+
+			</div>
+			<div class="piao">
+				<div class="yis">
+					<p>已售：<span></span>张</p>
+				</div>
+				<div class="yup">
+					<p>余票：<span></span>张</p>
+				</div>
+			</div>
+		</div>
+		<div class="bonn">
+			<div class="srue">
+				<span>锁定</span>
+			</div>
+			<div class="jsuo">
+				<span>解锁</span>
+			</div>
+		</div>
+		<div class="tan">
+			<span>请选择座位</span>
+		</div>
+		<div class="tan1">
+			<div class="p1">
+				<p>锁定</p>
+			</div>
+
+			<div class="textt">
+				<p>确认锁定此座位吗？</p>
+			</div>
+			<div class="an1">
+				<button class="sure">确定</button><button class="qux">取消</button>
+			</div>
+
+		</div>
+		<div class="tan2">
+			<div class="p2">
+				<p>解锁座位</p>
+			</div>
+
+			<div class="textt2">
+				<p>确认解锁此座位吗？</p>
+			</div>
+			<div class="an2">
+				<button class="sure2">确定</button><button class="qux">取消</button>
+			</div>
+
+		</div>
+		<div class="zhe"></div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var vuserid = [];
+			if(localStorage.getItem('vuserid')) {
+				vuserid = JSON.parse(localStorage.getItem('vuserid'));
+			}
+			if(vuserid ==''){
+				$('body').html('')
+			}
+			var timmer = [];
+			if(localStorage.getItem('timmer')) {
+				timmer = JSON.parse(localStorage.getItem('timmer'));
+			}
+			var chehao = [];
+			if(localStorage.getItem('chehao')) {
+				chehao = JSON.parse(localStorage.getItem('chehao'));
+			}
+			var chetime = [];
+			if(localStorage.getItem('chetime')) {
+				chetime = JSON.parse(localStorage.getItem('chetime'));
+			}
+			var cheid = [];
+			if(localStorage.getItem('checheid')) {
+				cheid = JSON.parse(localStorage.getItem('checheid'));
+			}
+			
+			var geton = [];
+			if(localStorage.getItem('geton')) {
+				geton = JSON.parse(localStorage.getItem('geton'));
+			}
+
+			var getoff = [];
+			if(localStorage.getItem('getoff')) {
+				getoff = JSON.parse(localStorage.getItem('getoff'));
+			}
+			var vid = [];
+			if(localStorage.getItem('vid')) {
+				vid = JSON.parse(localStorage.getItem('vid'));
+			}
+			var meney = [];
+			if(localStorage.getItem('meney')) {
+				meney = JSON.parse(localStorage.getItem('meney'));
+			}
+			$('.banxin span').html(chehao+'（'+'卧'+'）');
+			var tioffsite = [];
+			if(localStorage.getItem('tioffsite')) {
+				tioffsite = JSON.parse(localStorage.getItem('tioffsite'));
+			}
+			var tigosite = [];
+			if(localStorage.getItem('tigosite')) {
+				tigosite = JSON.parse(localStorage.getItem('tigosite'));
+			}
+			var pop = [];
+			var cout = $('ul li');
+			for(var m = 0; m < $('ul li').length; m++) {
+				pop.push($(cout[m]).html());
+			}
+
+
+			var opp = []
+			$.ajax({
+				type: "post",
+				url: "http://dingpiao.ec-8.cn/appuser/getOrder.do",
+				data: { "ORDERDATE": timmer,  "SID": cheid  },
+				dataType: "json",
+				success: function(data) {
+					console.log(data);
+				if(data[0][1]!=null && data[0][1]!=''){
+					var data1 = data[0][1].split(',')
+					for(var i = 0; i < data1.length; i++) {
+						for(var j = 0; j < pop.length; j++) {
+							if(data1[i] == pop[j]) {
+								$('ul li').eq(j).addClass('corr1');
+							}
+							if(data1[i] != '' && opp.indexOf(data1[i]) == -1) {
+							opp.push(data1[i])
+							}
+						}
+
+					}
+				}
+				if(data[0][2]!=null && data[0][2]!=''){
+					var data2 = data[0][2].split(',')
+					for(var i = 0; i < data2.length; i++) {
+						for(var j = 0; j < pop.length; j++) {
+							if(data2[i] == pop[j]) {
+								$('ul li').eq(j).addClass('corr1');
+							}
+							if(data2[i] != '' && opp.indexOf(data2[i]) == -1) {
+							opp.push(data2[i])
+							}
+						}
+
+					}
+				}
+				if(data[0][3]!=null && data[0][3]!=''){
+					var data3 = data[0][3].split(',')
+					for(var i = 0; i < data3.length; i++) {
+						for(var j = 0; j < pop.length; j++) {
+							if(data3[i] == pop[j]) {
+								$('ul li').eq(j).addClass('dorr');
+							}
+							if(data3[i] != '' && opp.indexOf(data3[i]) == -1) {
+							opp.push(data3[i])
+							}
+						}
+
+					}
+				};
+					
+
+					var yio = opp.length;
+					var toal = parseInt($('ul li').length);
+					var yup = toal - yio;
+					$('.yis span').html(yio)
+					$('.yup span').html(yup);
+
+				}
+			});
+
+			$("ul li").on('click', function() {
+				if($(this).hasClass('corro') || $(this).hasClass('corr1') || $(this).hasClass('dorr')) {
+					$(this).removeClass('corro');
+
+				}else{
+					$(this).addClass('corro');
+				}
+			})
+			$("ul li").on('click', function() {
+				if($(this).hasClass('dorr') && !$(this).hasClass('dorr1') && !$(this).hasClass('corr1')) {
+					$(this).addClass('dorr1');
+				}else{
+					$(this).removeClass('dorr1');
+				}
+			})
+			$("ul li").on('click', function() {
+				if($(".corro").length > 5){
+					$(this).removeClass('corro');
+					$('.tan').show();
+					$('.zhe').show();
+					$('.tan').html('一次最多锁定5个座位')
+				}
+			})
+			function get() {
+				window.location.reload();
+
+			}
+			var sjzuo = [];
+			var sjzuo1 = []
+			$(".srue").on('click', function() {
+
+				if($('.corro').length == 0) {
+					$('.tan').show();
+					$('.zhe').show();
+				} else {
+					$('.tan').hide();
+					$('.zhe').show();
+					var corro = $('.corro');
+					for(var i = 0; i < $('.corro').length; i++) {
+						sjzuo.push($(corro[i]).html());
+
+					}
+					for(var j = 0; j < sjzuo.length; j++) {
+						if(sjzuo1.indexOf(sjzuo[j]) == -1) {
+							sjzuo1.push(sjzuo[j])
+							sjzuo1 = sjzuo.join(',');
+							
+						}
+					}
+					$('.tan1').show();
+				}
+			});
+			$('.sure').on('click',function(){
+				$('.tan1').hide();
+				$('.zhe').hide();
+				var price = $('.corro').length*meney;
+				$.ajax({
+						type: "post",
+						url: "http://dingpiao.ec-8.cn/appuser/addOrderinfo.do",
+						data: {"offsite":tioffsite,"gosite":tigosite,"GET_ON": geton, "GET_OFF": getoff, "SHIFT_ID": cheid, "VID": vid, "ORDERDATE": timmer, "ORDERTIME": chetime, "SEAT": sjzuo1, "paymentMode": "3" , "totalprice": price},
+						dataType: "json",
+						success: function(data) {
+							if(data.success){
+								get();
+							}else{
+								alert(锁定失败)
+							}
+						}
+
+					});
+			})
+			$('.qux').on('click',function(){
+				$('.tan1').hide();
+				$('.zhe').hide();
+				$('.tan2').hide();
+			})
+			$('.tan').on('click', function() {
+				$('.tan').hide();
+				$('.zhe').hide();
+			})
+			$('.zhe').on('click', function() {
+				$('.tan').hide();
+				$('.zhe').hide();
+			})
+			var hh =[];
+			var hh1=[];
+			$('.jsuo').on('click',function(){
+				if($('.dorr1').length ==0){
+					$('.tan').show();
+					$('.zhe').show();
+				}else if($('.dorr1').length !=0){
+					$('.tan2').show()
+					var dorr1 = $('.dorr1');
+					for(var i = 0; i < $('.dorr1').length; i++) {
+						hh.push($(dorr1[i]).html());
+
+					}
+					for(var j = 0; j < hh.length; j++) {
+						if(hh1.indexOf(hh[j]) == -1) {
+							hh1.push(hh[j])
+							hh1 = hh.join(',');
+							
+						}
+					}
+				}
+			})
+			$('.sure2').on('click',function(){
+				$('.tan2').hide();
+				$('.zhe').hide();
+				$.ajax({
+						type: "post",
+						url: "http://dingpiao.ec-8.cn/appuser/deleteforSeat.do",
+						data: { "GET_ON": geton, "GET_OFF": getoff, "sid": cheid, "VID": vid, "ORDERDATE": timmer, "seat": hh1, "paymentMode": "3" },
+						dataType: "json",
+						success: function(data) {
+							if(data.msg=='解锁成功'){
+								get();
+							}else{
+								console.log(err)
+							}
+
+						}
+
+					});
+			})
+		</script>
+	</body>
+
+</html>

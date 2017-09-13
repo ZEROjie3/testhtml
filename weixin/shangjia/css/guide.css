@@ -1,0 +1,35 @@
+/*guide go*/
+.guide_box{
+	width: 100%;
+	display: flex;
+	background: white;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 9999;
+	padding: 0.16rem;
+	border-top: 1px solid gainsboro;
+	/*box-shadow: 0 0 15px #d9d8d8;*/
+	box-sizing: border-box;
+	
+}
+.guide_box li{
+	flex: 1;
+	
+}
+.guide_box li a{
+	color: #555555;
+	text-align: center;
+}
+.guide_box li a i{
+	font-size:20px;
+	display: block;
+	margin-top: 0.1rem;
+	margin-bottom: 0.133333rem;
+	
+}
+.guide_box li a p{
+	font-size:0.16rem;
+	margin-top: 0.2rem;
+}
+/*guide end*/

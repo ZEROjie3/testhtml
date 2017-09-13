@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+			<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/denglu.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div class="text">
+				<p>You are welcome to join us</p>
+			</div>
+			<div class="xian">
+				<div class="xianx">
+					
+				</div>
+			</div>
+			<div class="tu">
+				<i class="iconfont icon-qiche"></i>
+			</div>
+			<form action="" method="post">
+			<div class="zhanghao">
+				<div class="left">
+					<i class="iconfont icon-wode"></i>
+				</div>
+				<div class="right"> 
+					<input type="text" name="account" id="account" value="" placeholder="请输入账号" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"/>
+				</div>
+			</div>
+			<div class="mima">
+				<div class="left">
+					<i class="iconfont icon-mima"></i>
+				</div>
+				<div class="right"> 
+					<input type="text" name="password" id="password" value="" placeholder="请输入密码" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"/>
+				</div>
+			</div>
+			<div class="btn">
+				<span>登录</span>
+				<!--<input type="submit" value="登录" style="width:7.306666rem;height:1.28rem;line-height: 1.28rem;border:none; line-height:  1.28rem;background: #005982;color: white;"/>-->
+			</div>
+			</form>
+		</div>
+		
+		
+	</body>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			password.onkeyup=function(){password.value=password.value.replace(/./g,'*');};  
+		</script>
+</html>

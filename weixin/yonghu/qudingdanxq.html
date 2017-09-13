@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			
+			
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/qudingdanxq.css" />
+
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head">
+				<div class="box">
+					<div class="i">
+						<a href="dingdanye.html"><i class="iconfont icon-gengduo-copy"></i></a>
+					</div>
+					<div class="hd">
+						<span>我的订单</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="center box">
+			<div class="ter">
+				<p class="p1">已取消</p>
+				<p class="p2">已取消订单，有什么问题可以在线咨询！</p>
+			</div>
+		</div>
+		<div class="kong">
+
+		</div>
+		<div class="bx">
+			<div class="box bo">
+				<p class="lp0"></p>
+				<div class="left">
+					<p class="lp1"></p>
+					<p class="lp2"></p>
+				</div>
+				<div class="center1">
+					<div class="cp2"><img src="img/DX_03.png"/></div>
+					<p class="cp3">车牌：<span></span></p>
+				</div>
+				<div class="right">
+					<p class="rp1"></p>
+					<p class="rp2"></p>
+				</div>
+
+			</div>
+		</div>
+		<div class="kong">
+
+		</div>
+		<div class="dul">
+
+			<ul class="ul box">
+				<li>手机号码</li>
+				<li class="phone"></li>
+			</ul>
+
+		</div>
+		<div class="kong">
+
+		</div>
+		<div class="du2">
+			<ul class="ul2 box">
+				<li>订单信息</li>
+			</ul>
+		</div>
+		<div class="xinx">
+			<div class="box">
+				<ul class="xinxi">
+					<li class="x1">预定票数：</li>
+					<li class="x2"><span class="num"></span>张</li>
+				</ul>
+				<ul class="xinxi">
+					<li class="x1">预定座位：</li>
+					<li class="x2"><span class="num1"></span></li>
+				</ul>
+				<ul class="xinxi">
+					<li class="x1">发车时间：</li>
+					<li class="x2 ttim"></li>
+				</ul>
+				<ul class="xinxi">
+					<li class="x1">随车电话：</li>
+					<li class="x2 ttll"></li>
+				</ul>
+				<ul class="xinxi">
+					<li class="x1">预定车型：</li>
+					<li class="x2">大型青年商务客车</li>
+				</ul>
+				<ul class="xinxi">
+					<li class="x1">订单金额： </li>
+					<li class="x2"> ¥ <span class="money"></span></li>
+				</ul>
+				<ul class="xinxi">
+					<li class="x1">付款方式： </li>
+					<li class="x2 fuks"></li>
+				</ul>
+			</div>
+			<div class="xxkong">
+
+			</div>
+		</div>
+		<div class="btnz">
+			<div class="btnx">
+				<span><a href="tel:12345678910">在线咨询</a></span>
+			</div>
+		</div>
+
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var opd = [];
+			if(localStorage.getItem('opd')) {
+				opd = JSON.parse(localStorage.getItem('opd'));
+			}
+			var userid = [];
+			if(localStorage.getItem('userid')) {
+				userid = JSON.parse(localStorage.getItem('userid'));
+			}
+			if(userid ==''){
+				$('body').html('')
+			}
+			$.ajax({
+				type: "post",
+				url: "http://192.168.1.110:8090/appuser/getOrderInfoForId.do",
+				data: { "id": opd ,"user_id":userid},
+				dataType: "json",
+				success: function(data) {
+					var hml1 = data[0].ORDERDATE.substring(0, 11)
+					var tmim = data[0].ORDERTIME.substring(11)
+					tmim = hml1 + ' ' + tmim;
+					$('.lp0').html(hml1);
+					$('.lp1').html(data[0].get_on);
+					$('.lp2').html(data[0].gosite);
+					$('.rp1').html(data[0].get_off);
+					$('.rp2').html(data[0].offsite);
+					if(data[0].licenseState == 2) {
+						$('.cp3 span').html(data[0].licenseNumber + '（' + '卧' + '）');
+					} else {
+						$('.cp3 span').html(data[0].licenseNumber);
+					}
+
+					$('.phone').html(data[0].PHONE);
+					$('.num').html(data[0].SEATCOUNT);
+					$('.num1').html(data[0].SEAT);
+					$('.ttim').html(tmim);
+					$('.ttll').html(data[0].driverphone);
+					$('.money').html(data[0].totalprice);
+					if(data[0].PAYMENTMODE == 1) {
+						$('.fuks').html('微信支付');
+					}
+					if(data[0].PAYMENTMODE == 2) {
+						$('.fuks').html('上车付款');
+					}
+
+				}
+
+			});
+		</script>
+
+	</body>
+
+</html>

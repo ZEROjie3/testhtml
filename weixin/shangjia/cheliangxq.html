@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+			<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/pub.css" />
+		<link rel="stylesheet" type="text/css" href="css/cheliangxq.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div class="guding">
+			<div class="head ">
+				<div class="box">
+
+					<div class="i">
+						<a href="cheliang.html"><i class="iconfont icon-gengduo-copy"></i></a>
+					</div>
+					<div class="hd">
+						<span>车辆管理</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="kong">
+
+		</div>
+		<div class="text">
+			<div class="hao">
+				<span class="haoma"></span>
+			</div>
+			<ul class="ul">
+				<li><span class="span">司机姓名：</span><span class="name"></span></li>
+				<li><span class="span">联系方式：</span><span class="tel"></span></li>
+				<li><span class="span">路线：</span><span class="lu1"></span>-<span class="lu2"></span></li>
+				<li><span class="span">出发时间：</span><span class="time"></span></li>
+				<li><span class="span">票价：</span><span class="meney"></span></li>
+				<li><span class="span">余票：</span><span class="yupr"></span>张</li>
+				
+			</ul>
+		</div>
+		<div class="bunyu">
+			<div class="btn">
+				<span>查看余票</span>
+			</div>	
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var cid = [];
+			if(localStorage.getItem('cid')) {
+				cid = JSON.parse(localStorage.getItem('cid'));
+			}
+			var vuserid = [];
+			if(localStorage.getItem('vuserid')) {
+				vuserid = JSON.parse(localStorage.getItem('vuserid'));
+			}
+			if(vuserid ==''){
+				$('body').html('')
+			}
+			$.ajax({
+				type: "post",
+				url: "http://192.168.1.110:8090/appuser/getVehic.do",
+				data: { "VID": cid[0],"VID": vuserid },
+				dataType: "json",
+				success: function(data) {
+					
+					if(data[0].LICENSESTATE==2){
+						$('.haoma').html(data[0].LICENSENUMBER+'（'+'卧'+'）');
+					}else{
+						$('.haoma').html(data[0].LICENSENUMBER)
+					}
+					$('.name').html(data[0].DRIVERNAME)
+					$('.tel').html(data[0].DRIVERPHONE)
+				}
+			});
+		</script>
+	</body>
+
+</html>

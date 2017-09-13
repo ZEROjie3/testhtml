@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/dingdan.css" />
+		<link rel="stylesheet" type="text/css" href="css/chenggong.css" />
+		<style type="text/css">
+			#zuowei {
+				width: 5rem;
+				height: 100%;
+				border: none;
+				background: transparent;
+			}
+			
+			.bodty {
+				width: 10rem;
+				margin: 0 auto;
+			}
+			.kongk{
+				width: 10rem;
+				height: 0.266666rem;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bodty">
+
+			<div class="box">
+			</div>
+			<div class="head ">
+				<div class="box">
+
+					<div class="i">
+						<a href="checi.html"><i class="iconfont icon-gengduo-copy"></i></a>
+					</div>
+					<div class="hd">
+
+					</div>
+				</div>
+				<div class="dt box">
+					<div class="left">
+						<p class="lp1"></p>
+						<p class="lp2"></p>
+					</div>
+					<div class="center">
+						<p class="cp1"></p>
+						<div class="cp2"><img src="img/jt_03.png"/></div>
+						<p class="cp3">车牌：<span></span></p>
+					</div>
+					<div class="right">
+						<p class="rp1"></p>
+						<p class="rp2"></p>
+
+					</div>
+
+				</div>
+			</div>
+			<div class="ddkong">
+
+			</div>
+			<div class="cor">
+				<ul class="ul">
+					<li class="li1">车型</li>
+					<li class="li8">大型青年商务客车</li>
+				</ul>
+				<ul class="ul">
+					<li class="li1">车队联系</li>
+					<li class="li2"></li>
+				</ul>
+				<ul class="ul">
+					<li class="li1">票价</li>
+					<li class="li3">¥ <span></span></li>
+				</ul>
+			</div>
+			<div class="ddkong">
+
+			</div>
+			<div class="tup1">
+				<!--<ul class="ul1">
+					<li class="li1">乘客</li>
+					<li class="li4"><input type="text" name="namem" id="namem" value=""placeholder="请填写姓名" /></li>
+				</ul>-->
+				<ul class="ul1">
+					<li class="li1">手机号码</li>
+					<li class="li5"><input type="text" name="tell" id="tell" value="" placeholder="请填写手机号" /></li>
+				</ul>
+				
+				<ul class="ul1">
+					<li class="li1">座位选择</li>
+					<li class="li7">
+						<a><input type="text" readonly unselectable="on" name="zuowei" id="zuowei" value="" placeholder="座位选择" /></a>
+					</li>
+					<div class="tu">
+						<a><i class="iconfont icon-gengduo1"></i></a>
+					</div>
+				</ul>
+				<ul class="ul1">
+					<li class="li1">订票协议</li>
+					<li class="li6">协议详情</li>
+					<div class="put"><input type="checkbox"/></div>
+				</ul>
+			</div>
+			<div class="ddkong">
+
+			</div>
+			<div class="wei0">
+
+				<div class="wei">
+					<div class="w1">
+						<i class="iconfont icon-wechat-payment"></i>
+					</div>
+					<div class="w2">
+						<span>微信支付</span>
+					</div>
+					<div class="w3">
+						<input type="radio" name="w" id="wei" checked>
+					</div>
+
+				</div>
+			</div>
+			<div class="shang0">
+				<div class="shang">
+					<div class="w1">
+						<i class="iconfont icon-keche"></i>
+					</div>
+					<div class="w2">
+						<span>上车付款</span>
+					</div>
+					<div class="w3">
+						<input type="radio" name="w" id="shang" />
+					</div>
+
+				</div>
+			</div>
+			<div class="guide">
+				<div id="gd">
+
+					<div class="zong">
+						<p>订单总额：<span>¥</span><span id='num'></span></p>
+					</div>
+					<div class="ti">
+						<span>提交订单</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--弹窗-->
+		<div class="hd1">
+					<div class="hd2">
+						<span>订票协议</span>
+						
+						</div>
+				</div>
+		<div class="tan">
+			<div class="head1 ">
+				
+				<div class="box1">
+
+					<p> &nbsp;&nbsp;&nbsp; &nbsp; 为使旅客安全、方便地买到广州市17家客运站发车的公路客运车票，广州交通信息化建设投资营运有限公司（以下简称：广州交投公司）特推出电子客票服务。旅客在购票之前，请仔细阅读以下服务条款。</p>
+
+					<p> &nbsp;&nbsp;&nbsp; &nbsp; 当您点击服务协议页面下的“我同意”按钮，即视为您已阅读、了解并完全同意服务条款中的各项内容，包括本网站对服务条款所作的任何修改。本网站在必要时可修改服务条款，并在网站进行公告，一经公告，立即生效。如您继续使用服务，则视为您已接受修订的服务条款。</p>
+
+					<p> &nbsp; &nbsp;&nbsp;&nbsp; 旅客须遵守《中华人民共和国交通部汽车旅客运输规则》、《中华人民共和国道路交通安全法实施条例》、《广州公路客运网上购票须知》及《中华人民共和国反恐怖主义法》等中国有关法律、法规和本网站有关规定。</p>
+
+					<p><b>一、购票</b></p>
+
+					<p> &nbsp;&nbsp;&nbsp; &nbsp; 根据实名制要求，购票时请如实填写乘车人的有效身份证号码，无法出示有效身份证件原件的旅客，应当到公安机关办理旅客进站乘车的临时身份证明。</p>
+					<p>本网站只能订购第二天及联网售票预售期内的车票。持一张有效身份证件在同一车次(同一客运站当日发出的同一车次)只允许购买一张实名制车票，同一个订单中，最多可支持5 名旅客购票。</p>
+					<p>本网站不提供特殊旅客（伤病旅客、残疾旅客、军人、孕妇、学生）优惠票价的购票服务。如需购买，请至发车站窗口购票。</p>
+					<p>网站只对注册用户提供购票服务。购票人购票前，必须注册为网站用户。注册时需要填写基本信息（必须填写用户名、密码）、联系信息（必须填写手机号码和电子邮件）。</p>
+					<p> 注册成功后，系统将自动向您的电子邮箱发送一封注册成功的邮件，邮件中包含你的账号信息，请提供真实有效的电子邮箱。</p>
+					<p> 本网站购票时不提供选座功能，全部由系统自动匹配座位编号。旅客在本网站上购买车票时，请如实填写取票旅客的相关个人资料和联系方法，提交订单时，请确认您输入的联系信息正确无误，并保持通讯畅通，以便我们的客服人员在有需要时能及时与您联系。如您所留的电话号码长时间处于无人接听、忙音、空号等状况而使我们的客服人员不能及时联系到您，由此导致的不能及时确认、无法及时出票等问题，本公司将不承担任何法律责任。</p>
+					<p> 需要选择快递服务的旅客，请认真阅读快递协议，当您点击选择快递服务即视为您已阅读、了解并完全同意快递服务条款中的各项内容。 需要选择登车宝服务的旅客，请认真阅读相关协议，当您点击选择登车宝服务即视为您已阅读、了解并完全同意服务条款中的各项内容。 旅客在购票完成后需对购票时填写的个人信息进行保密，由于帐号和密码的泄露而造成的一切损失及法律责任均由该旅客承担。
+					</p>
+					<div class="kongk">
+						
+					
+					</div>
+					</div>
+				
+			</div>
+		</div>
+		<div class="tonh">
+			<div class="bno">
+			<div class="tong">
+				<span>同意</span>
+			</div>
+			<div class="buton">
+				<span>不同意</span>
+			</div>
+			</div>
+		</div>
+		<!--弹窗-->
+		<div class="tann">
+		<i class="iconfont icon-gantanhao_green"></i><span>请选择座位</span>
+		</div>
+		<div class="tann1">
+			<i class="iconfont icon-gantanhao_green"></i><span>请选择购票协议</span>
+		</div>
+		<div class="tans">
+			<i class="iconfont icon-gantanhao_green"></i><span>请输入手机号</span>
+		</div>
+		<div class="zhe">
+
+		</div>
+		<div class="zhez">
+
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			function GetDateStr(AddDayCount) {
+				var dd = new Date();
+				dd.setDate(dd.getDate() + AddDayCount); //获取AddDayCount天后的日期 
+				var y = dd.getFullYear();
+				var m = dd.getMonth() + 1; //获取当前月份的日期 
+				var d = dd.getDate();
+				if(m > 0 && m < 10 && d >= 10) {
+					return y+"0" + m + "月" + d + "日";
+				} else if(m > 0 && m < 10 && d < 10) {
+					return y+"0" + m + "月" + '0' + d + "日";
+				} else if(m >= 10 && d < 10) {
+					return y+m + "月" + '0' + d + "日";
+				} else if(m >= 10 && d >= 10) {
+					return y+m + "月" + d + "日";
+				}
+
+			}
+			var ttm = [];
+			var userid = [];
+			if(localStorage.getItem('userid')) {
+				userid = JSON.parse(localStorage.getItem('userid'));
+			}
+			if(userid ==''){
+				$('body').html('')
+			}
+			if(localStorage.getItem('ttm')) {
+				ttm = JSON.parse(localStorage.getItem('ttm'));
+			}
+			
+			var timt = ttm;
+			var tml = ttm.substring(5, 10);
+			
+			tml = tml.replace("-", '月');
+			tml = tml + '日';
+
+			$('.hd').html(tml);
+			$('.li6').on('click', function() {
+
+				$('.tan').show();
+				$('.hd1').show();
+				$('.zhez').show();
+				$('.tonh').show();
+			})
+			$('i').on('click', function() {
+				$('.tan').hide();
+				$('.hd1').hide();
+			})
+			$('.tong').on('click', function() {
+				$("input[type='checkbox']").prop("checked","checked"); 
+				$('.tan').hide();
+				$('.hd1').hide();
+				$('.zhez').hide();
+				$('.tonh').hide();
+			})
+			$('.buton').on('click', function() {
+			$("input[type='checkbox']").removeAttr("checked") ;
+				$('.tan').hide();
+				$('.hd1').hide();
+				$('.zhez').hide();
+				$('.tonh').hide();
+			})
+			var shuzi = [];
+			if(localStorage.getItem('shuzi')) {
+				shuzi = JSON.parse(localStorage.getItem('shuzi'));
+			}
+			var o = parseInt(shuzi);
+			
+			var data = [];
+			if(localStorage.getItem('data')) {
+				data = JSON.parse(localStorage.getItem('data'));
+				
+			}
+			
+			var time = data[o].gotime;
+			
+			var timt = ttm + ' ' + data[o].gotime;
+		
+			time = time.substring(0, 5);
+			$('.cp1').html(time);
+			$(".left .lp1").html(data[o].get_on);
+			$(".left .lp2").html(data[o].gosite);
+			$(".right .rp1").html(data[o].get_off);
+			$(".right .rp2").html(data[o].offsite);
+			$('.li2').html(data[o].driverphone);
+			$('.li3 span').html(data[o].price);
+			if(data[o].licenseState == 2) {
+				$('.cp3 span').html(data[o].licenseNumber + '（' + '卧' + '）');
+			} else {
+				$('.cp3 span').html(data[o].licenseNumber);
+			}
+			$('input[readonly]').on('focus', function() {
+				$(this).trigger('blur');
+			});
+			$('.tu a').on('click', function() {
+
+				if($('#tell').val() == '') {
+					$('.zhe').show();
+					$('.tans').show();
+					$(this).attr('href', 'javascript:;');
+
+				}
+
+				if($('#tell').val() != '' && data[o].licenseState == 1) {
+					$(this).attr('href', 'zuowei.html');
+				}
+				if($('#tell').val() != '' && data[o].licenseState == 2) {
+					$(this).attr('href', 'wopu.html');
+				}
+			})
+			$('.li7 a').on('click', function() {
+				tellp = $('#tell').val();
+				if($('#tell').val() == '') {
+					$('.zhe').show();
+					$('.tans').show();
+					$(this).attr('href', 'javascript:;');
+
+				}
+
+				if($('#tell').val() != '' && data[o].licenseState == 1) {
+					$(this).attr('href', 'zuowei.html');
+					localStorage.setItem('tellp', JSON.stringify(tellp));
+				}
+				if($('#tell').val() != '' && data[o].licenseState == 2) {
+					$(this).attr('href', 'wopu.html');
+					localStorage.setItem('tellp', JSON.stringify(tellp));
+				}
+			})
+
+			var zuow = [];
+			var zuow1 = [];
+			var zuow2 = [];
+			if(localStorage.getItem('zuow')) {
+				zuow = JSON.parse(localStorage.getItem('zuow'));
+				for(var i = 0;i<zuow.length;i++){
+					if(zuow2.indexOf(zuow[i])==-1){
+						zuow2.push(zuow[i])
+
+					}
+				}
+				zuow1 =zuow2.join(',')
+			}
+
+			var tellp = ''
+			if(localStorage.getItem('tellp')) {
+				tellp = JSON.parse(localStorage.getItem('tellp'));
+				$('#tell').val(tellp);  
+			}
+			
+			var price = zuow2.length * data[o].price
+			
+			$('#zuowei').val(zuow1);
+			$('#num').html(price);
+
+			var phone = $('#tell').val();
+			
+
+			$('.zhe').on('click', function() {
+				$('.zhe').hide();
+				$('.tann').hide();
+				$('.tans').hide();
+				$('.tann1').hide();
+
+			});
+			$('.tann').on('click', function() {
+				$('.zhe').hide();
+				$('.tann').hide();
+				$('.tans').hide();
+				$('.tann1').hide();
+
+			});
+			$('.tans').on('click', function() {
+				$('.zhe').hide();
+				$('.tann').hide();
+				$('.tans').hide();
+				$('.tann1').hide();
+
+			});
+			$('.tann1').on('click', function() {
+				$('.zhe').hide();
+				$('.tann1').hide();
+				$('.tans').hide();
+				$('.tann').hide();
+
+			});
+			$('.i').on('click', function() {
+				localStorage.removeItem("zuow");
+			})
+			
+			function
+			checkMobile(str) {
+				var re = /^1\d{10}$/
+				if(re.test(str)) {} else {
+					$(".tans").show();
+					$('.zhe').show();
+					
+				}
+
+			}
+			$("#tell").blur(function() {
+				checkMobile($('#tell').val());
+			});
+			
+			$('.tu').on('click', function() {
+				neme = $('#namem').val();
+				tellp = $('#tell').val();
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.110:8090/appuser/getOrder.do",
+					data: { "ORDERDATE": ttm, "ORDERTIME": time, "SID": data[o].shift_id },
+					dataType: "json",
+					success: function(data) {
+						
+
+					}
+				});
+				localStorage.setItem('tellp', JSON.stringify(tellp));
+			})
+
+			function get() {
+				var html = ''
+				html += '<div class="chead "><div class="cbox"><div class="ci"><a href="zhuye.html"><i class="iconfont icon-gengduo-copy"></i></a>'
+				html += '</div><div class="chd"><span >支付完成</span></div></div></div><div class="cgbg box"><div class="bgb"><i class="iconfont icon-duihao-copy"></i></div>'
+				html += '</div><div class="text box"><p class="p1">恭喜您</p><p class="p2">订单已完成支付 点击查看订单观看详情！</p></div>'
+				html += '<div class="btn"><button><a href="dingdanxq.html">查看订单</a></button></div>'
+				$('.bodty').html(html);
+			}
+			var zhfu = 1
+			$('#wei').on('click', function() {
+				zhfu = 1;
+			})
+			$('#shang').on('click', function() {
+				zhfu = 2;
+			})
+			$('.ti').on('click', function() {
+				localStorage.removeItem("opd");
+				localStorage.removeItem("zuow");
+				localStorage.removeItem("val");
+				localStorage.removeItem("val1");
+				
+				if($('#tell').val() == '') {
+					$('.zhe').show();
+					$('.tans').show();
+					return false;
+				}
+				if($('#zuowei').val() == '') {
+					$('.zhe').show();
+					$('.tann').show();
+					return false;
+				}
+				if(!$("input[type='checkbox']").is(':checked')) {
+					$('.zhe').show();
+					$('.tann1').show();
+					return false;
+				}
+
+				var opd = [];
+				var id = ''
+				if($('#zuowei').val() != '' && $('#tell').val() != '' &&  $("input[type='checkbox']").is(':checked')) {
+					
+					var opd = [];
+					var id = ''
+					$.ajax({
+						type: "post",
+						url: "http://192.168.1.110:8090/appuser/addOrderinfo.do",
+						data: {"offsite":data[o].offsite,"gosite":data[o].gosite, "GET_ON": data[o].GET_ON, "GET_OFF": data[o].GET_OFF, "SHIFT_ID": data[o].shift_id, "totalprice": price, "PHONE": phone, "VID": data[o].vid, "ORDERDATE": ttm, "ORDERTIME": time, "SEAT": zuow1, "paymentMode": zhfu ,"user_id":userid},
+						dataType: "json",
+						success: function(data) {
+							console.log(data);
+							if(data.success){
+								setTimeout(function(){
+									get();
+								},500)
+								
+								id = data.msg;
+								opd.push(id);
+								opd = opd[(opd.length - 1)];
+								localStorage.setItem('opd', JSON.stringify(opd));
+							}else if(data.msg == '座位已存在'){
+								alert('座位已选择');
+							}else{
+								alert('下单失败');
+							}
+							
+						}
+
+					});
+
+				}
+
+			})
+		</script>
+	</body>
+
+</html>

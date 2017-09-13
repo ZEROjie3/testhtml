@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+			<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<!--guide-->
+
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/zhuce.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="tu">
+				<i class="iconfont icon-qiche"></i>
+			</div>
+			
+			<div class="youhu">
+				<div class="left">
+					<i class="iconfont icon-wode"></i>
+				</div>
+				<div class="right">
+					<input type="text" name="" id="youhu" value="" placeholder="请输入用户名"/>
+				</div>
+			</div>
+			<div class="zhanghao">
+				<div class="left">
+					<i class="iconfont icon-shouji"></i>
+				</div>
+				<div class="right">
+					<input type="text" name="" id="zhanghao" value="" placeholder="请输入手机号"/>
+				</div>
+			</div>
+			
+			<div class="password">
+				<div class="left">
+					<i class="iconfont icon-mima"></i>
+				</div>
+				<div class="right">
+					<input type="password" name="" id="password" value="" placeholder="请输入密码" />
+				</div>
+			</div>
+			<div class="zaipassword">
+				<div class="left">
+					<i class="iconfont icon-mima"></i>
+				</div>
+				<div class="right">
+					<input type="password" name="" id="zaipassword" value="" placeholder="确认密码" />
+				</div>
+			</div>
+			
+			<div class="btn">
+				<span>申请注册</span>
+			</div>
+			<div class="erw">
+				<div class="left1">
+					<a href="index.html">已有账号?点击登录</a>
+				</div>
+				
+			</div>
+			
+		</div>
+		<div class="tans">
+		<i class="iconfont icon-gantanhao_green"></i><span></span>
+		</div>
+		<div class="zhe">
+
+		</div>
+	</body>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+//			password.onkeyup=function(){password.value=password.value.replace(/./g,'*');}; 
+//			zaipassword.onkeyup=function(){zaipassword.value=zaipassword.value.replace(/./g,'*');};  
+			
+			$('.tans').on('click',function(){
+				$(".tans").hide();
+				$('.zhe').hide();
+			})
+			$('.zhe').on('click',function(){
+				$(".tans").hide();
+				$('.zhe').hide();
+			})
+			$('.btn').on('click',function(){
+				if($('#zhanghao').val() !='' && $('#youhu').val() !=''&& $('#password').val() !=''&& $('#zaipassword').val() !=''&& $('#zaipassword').val() == $('#password').val()){
+					
+					var txt =$('#youhu').val()
+					var txt1 =$('#zhanghao').val()
+					var txt2 =$('#password').val()
+					$.ajax({
+					type: "post",
+					url: "http://192.168.1.110:8090/appuser/saveU.do",
+					data: { "USERNAME": txt, "PASSWORD": txt2, "PHONE": txt1},
+					dataType: "json",
+					success: function(data) {
+						
+						if(data.success){
+							$(".tans span").text("注册成功");
+								$(".tans").show();
+								$('.zhe').show();
+							setTimeout(function(){
+								 window.location.href ='index.html'
+							},1000)
+							  
+						}else if(data.success =="账号已存在"){
+							$(".tans span").text("账号已存在");
+								$(".tans").show();
+								$('.zhe').show();
+						}else{
+							alert('账号异常')
+						}
+					}
+				});
+				}
+				
+				if($('#zaipassword').val() ==''){
+					$(".tans").show();
+					$('.zhe').show();
+					$(".tans span").text("请输入密码");
+				}
+				if($('#password').val() != $('#zaipassword').val() && $('#zaipassword').val()!='' ){
+					$(".tans").show();
+					$('.zhe').show();
+					$('#zaipassword').val('')
+					$(".tans span").text("密码输入错误请重新输入");
+				}
+				if($('#password').val() ==''){
+					$(".tans").show();
+					$('.zhe').show();
+					$(".tans span").text("请输入密码");
+				}
+				if($('#zhanghao').val() ==''){
+					$(".tans").show();
+					$('.zhe').show();
+					$(".tans span").text("请输入手机号");
+				}
+				if($('#youhu').val() ==''){
+					$(".tans").show();
+					$('.zhe').show();
+					$(".tans span").text("请输入用户名");
+				}
+			})
+			$('#zhanghao').on('blur',function(){
+				checkPhone();
+			})
+			function checkPhone(){ 
+		    var zhanghao = document.getElementById('zhanghao').value;
+		    if(!(/^1[34578]\d{9}$/.test(zhanghao))){ 
+		       		$(".tans").show();
+					$('.zhe').show();
+					$(".tans span").text("手机号输入错误");
+		        return false; 
+		    } 
+		}
+			
+		</script>
+</html>

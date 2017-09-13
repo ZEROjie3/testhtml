@@ -1,0 +1,202 @@
+.box {
+	width: 9.386666rem;
+	margin: 0 auto;
+}
+
+.head {
+	width: 10rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	background: #008CF5;
+	overflow: hidden;
+	margin: 0 auto;
+	color: white;
+}
+
+.i {
+	float: left;
+	width: 1rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	
+}
+
+.i a {
+	width: 100%;
+	height: 100%;
+	color: white;
+	display: inline-block;
+}
+
+.hd {
+	float: left;
+	width: 7rem;
+	height: 1.2rem;
+	text-align: center;
+	font-size: 0.4rem;
+	line-height: 1.2rem;
+}
+.kong{
+	width: 10rem;
+	height: 0.266666rem;
+	background: #f2f2f2;
+}
+.body{
+	width: 10rem;
+	background: white;
+	
+}
+.body ul:first-child{
+	margin-top: 0.533333rem;
+}
+.li{
+	margin-top: 0.4rem;
+}
+.body ul:nth-child(2){
+	margin-top: 0.8rem;
+}
+.body ul:nth-child(3){
+	margin-top: 0.8rem;
+}
+.body ul li span{
+	color: #ff5555;
+}
+ul li{
+	font-size: 0.373333rem;
+}
+#yuany{
+	border: none;
+	border: 1px solid #d2d2d2;
+	width: 8.906666rem;
+	height: 1.013333rem;
+	text-indent: 0.2rem;
+	line-height: 1.013333rem;
+	border-radius:5px ;
+	
+}
+#jine{
+	border: none;
+	border: 1px solid #d2d2d2;
+	width: 8.906666rem;
+	height: 1.013333rem;
+	text-indent: 0.2rem;
+	line-height: 1.013333rem;
+	border-radius:5px ;
+	
+}
+#shuo{
+	border: none;
+	border: 1px solid #d2d2d2;
+	width: 8.906666rem;
+	height: 2.64rem;
+	text-indent: 0.2rem;
+	border-radius:5px ;
+	
+}
+.btnp{
+	width: 6.666666rem;
+	height: 1.333333rem;
+	text-align: center;
+	line-height:1.333333rem;
+	color: white;
+	font-size: 0.506666rem;
+	background: #008CF5;
+	border-radius:5px ;
+	margin-bottom: 0.5rem;
+	margin: 0 auto;
+}
+.konh{
+	width: 10rem;
+	height: 0.666666rem;
+	margin: 0 auto;
+	background: white;
+	
+}
+.qie{
+	width: 10rem;
+	margin: 0 auto;
+}
+.tan{
+	width: 80%;
+	height: 4.613333rem;
+	position: fixed;
+	z-index: 99999;
+	left:10%;
+	top: 50%;
+	margin-top: -2rem;
+	background: #000;
+	overflow: hidden;
+	display: none;
+	border-radius:10px ;
+}
+.zhe{
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	opacity: 0.1;
+	position: fixed;
+	z-index: 99998;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.p{
+	width: 100%;
+	height: 1.066666rem;	
+	text-align: center;
+	line-height: 1.066666rem;
+	color: white;
+	font-weight:600 ;
+	font-size: 0.4rem;
+	border-bottom:1px solid #616161 ;
+}
+.tan .text{
+	width: 80%;
+	height: 2.4rem;
+	margin-left: 10%;
+	text-align: center;
+	color: white;
+	font-size: 0.373333rem;
+	line-height: 2.4rem;
+}
+.an{
+	width: 100%;
+	height: 1.146666rem;
+	border-top:1px solid #616161 ;
+}
+.sure{
+	width: 49%;
+	height: 100%;
+	text-align: center;
+	line-height: 1.146666rem;
+	background: #000;
+	color: white;
+	border: none;
+	border-right: 1px solid #616161;
+	font-size: 0.4rem;
+}
+.qux{
+	width: 49%;
+	height: 100%;
+	text-align: center;
+	line-height:1.146666rem;
+	background: #000;
+	color: white;
+	border: none;
+	/*border-left: 1px solid #616161;*/
+	font-size: 0.4rem;
+}
+.dan{
+	width: 60%;
+	height: 4rem;
+	position: fixed;
+	z-index: 99999;
+	left:20%;
+	top: 50%;
+	margin-top: -2rem;
+	text-align: center;
+	line-height:4rem;
+	background: white;
+	display: none;
+}
+

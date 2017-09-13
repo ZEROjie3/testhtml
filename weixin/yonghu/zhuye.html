@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>微信汽车</title>
+		<!--自适应框架 go-->
+		<style type="text/css">
+			div {
+				font-size: 12px;
+				/*    默认写上dpr为1的fontSize*/
+			}
+			
+			[data-dpr="2"] div {
+				font-size: 24px;
+			}
+			
+			[data-dpr="3"] div {
+				font-size: 36px;
+			}
+		</style>
+		<script src="build/flexible_css.debug.js"></script>
+		<script src="build/flexible.debug.js"></script>
+		<script type="text/javascript">
+			if(!dpr && !scale) {
+				var isAndroid = win.navigator.appVersion.match(/android/gi);
+				var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+				var devicePixelRatio = win.devicePixelRatio;
+				if(isIPhone) {
+					// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+					if(devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+						dpr = 3;
+					} else if(devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+						dpr = 2;
+					} else {
+						dpr = 1;
+					}
+				} else {
+					// 其他设备下，仍旧使用1倍的方案
+					dpr = 1;
+				}
+				scale = 1 / dpr;
+			}
+		</script>
+		<!--自适应框架 end-->
+		<!--heaedr-->
+
+		<!--guide-->
+		<link rel="stylesheet" type="text/css" href="css/guide.css" />
+		<!--guide-->
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/zhuye.css" />
+		<style type="text/css">
+			.guide_box li:nth-child(1) a {
+				color: #008cf5;
+			}
+			
+			.section_content {
+				margin-bottom: 66px;
+				width: 100%;
+			}
+			
+			.tu i {
+				color: #008CF5;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!--banner go-->
+		<div class="banner_box">
+			<div class="banner">
+				<!-- Swiper -->
+				<div class="demo1 swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="img/anli.jpg" /></div>
+						<div class="swiper-slide"><img src="img/anli.jpg" /></div>
+						<div class="swiper-slide"><img src="img/anli.jpg" /></div>
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+
+					<!--<div class="swiper-pagination"></div>-->
+				</div>
+			</div>
+		</div>
+		<!--banner end-->
+		<div class="section_content">
+			<div class="banxin">
+				<div class="di">
+					<div class="chu">
+						<sapn>出发地</sapn>
+					</div>
+					<div class="dao">
+						<sapn>目的地</sapn>
+					</div>
+				</div>
+				<div class="xuan">
+					<div class="chu">
+						<a href='chengshi.html'><input type="text" readonly unselectable="on" name="" id="chup" value="" placeholder="请选择" /></a>
+					</div>
+					<div class="tu">
+						<i class="iconfont icon-qiehuan"></i>
+					</div>
+					<div class="dao">
+						<a href='chengshid.html'><input type="text" readonly unselectable="on" name="" id="daop" value="" placeholder="请选择" /></a>
+					</div>
+				</div>
+				<div class="xian">
+
+				</div>
+				<div class="shang">
+					<div class="shang1">
+						<span>上车地点</span>
+					</div>
+					<div class="shang2">
+						<input type="text" readonly unselectable="on" name="put" id="puts" placeholder="请选择" />
+					</div>
+
+				</div>
+
+				<div class="xia">
+					<div class="xia1">
+						<span>下车地点</span>
+					</div>
+					<div class="xia2">
+						<input type="text" readonly unselectable="on" name="put" id="putx" placeholder="请选择" />
+					</div>
+				</div>
+				<div class="time">
+					<div class="qian">
+
+					</div>
+					<div class="jin ation">
+
+					</div>
+					<div class="hou">
+
+					</div>
+				</div>
+				<div id="kong">
+
+				</div>
+				<div id="ch">
+					<a href="checi.html"><input type="button" id="cha" value="查询" /></a>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" name="shangs" id="shangs" value="" />
+		<input type="hidden" name="xiax" id="xiax" value="" />
+		<!--guide end-->
+		<ul class="guide_box">
+			<li>
+				<a href="zhuye.html">
+					<i class="iconfont icon-shouye"></i>
+					<p>首页</p>
+				</a>
+			</li>
+			<li>
+				<a href="dingdanye.html">
+					<i class="iconfont icon-dingdan"></i>
+					<p>订单</p>
+				</a>
+			</li>
+			<li>
+				<a href="wode.html">
+					<i class="iconfont icon-wode"></i>
+					<p>我的</p>
+				</a>
+			</li>
+
+		</ul>
+		<!--guide end-->
+		<!--弹窗-->
+		<div class="tan">
+			<div class="ngnh">
+				<div id="didian">
+					<span>上车地点</span>
+				</div>
+				<div class="hua">
+					<ul>
+					</ul>
+				</div>
+				<div class="btn">
+					<i class="iconfont icon-cuohao1"></i>
+				</div>
+				<div class="yuan">
+					
+				</div>
+				<div class="yuan1">
+					
+				</div>
+				<div class="xian">
+					
+				</div>
+			</div>
+		</div>
+		<!--遮罩-->
+		<div class="zhe"></div>
+		<div class="tis">
+			<i class="iconfont icon-gantanhao_green"></i><span>请选择上车地点</span>
+		</div>
+		<div class="tix">
+			<i class="iconfont icon-gantanhao_green"></i><span>请选择下车地点</span>
+		</div>
+		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var swiper = new Swiper('.demo1.swiper-container', {
+				pagination: '.demo1 .swiper-pagination',
+				paginationClickable: true,
+				loop: true,
+				centeredSlides: true,
+				autoplay: 2500,
+				autoplayDisableOnInteraction: false,
+
+			});
+
+			function GetDateStr(AddDayCount) {
+				var dd = new Date();
+				dd.setDate(dd.getDate() + AddDayCount); //获取AddDayCount天后的日期 
+				var y = dd.getFullYear();
+				var m = dd.getMonth() + 1; //获取当前月份的日期 
+				var d = dd.getDate();
+				if(m > 0 && m < 10 && d >= 10) {
+					return "0" + m + "月" + d + "日";
+				} else if(m > 0 && m < 10 && d < 10) {
+					return "0" + m + "月" + '0' + d + "日";
+				} else if(m >= 10 && d < 10) {
+					return m + "月" + '0' + d + "日";
+				} else if(m >= 10 && d >= 10) {
+					return m + "月" + d + "日";
+				}
+
+			}
+			$('.qian').html(GetDateStr(-1));
+			$('.jin').html(GetDateStr(0));
+			$('.hou').html(GetDateStr(+1));
+			//更$(this)$(this)换时间
+		
+			$('input[readonly]').on('focus', function() {
+				$(this).trigger('blur');
+			});
+			$('.time').on('click', 'div', function() {
+				$('.time').find('div').removeClass('ation')
+				$(this).addClass('ation');
+			})
+
+			$('#chup').on('click', function() {
+				$('#daop').removeClass('opp');
+			})
+			$('#daop').on('click', function() {
+				$('#chup').removeClass('opp');
+			})
+			var arr = [];
+			if(localStorage.getItem('arr')) {
+				arr = JSON.parse(localStorage.getItem('arr'));
+
+			}
+			var userid = [];
+			if(localStorage.getItem('userid')) {
+				userid = JSON.parse(localStorage.getItem('userid'));
+			}
+			if(userid ==''){
+				$('body').html('')
+			}
+			
+			$.ajax({
+				type: "post",
+				url: "http://192.168.1.110:8090/appuser/getDestina.do",
+				dataType: "json",
+				success: function(data) {
+						for(var i = data.length-1; i >=0 ; i--) {
+							if(data[i].cityName == arr[(arr.length -1)]) {
+								$('#chup').val(data[i].cityName);
+								$('#puts').val(data[i].SITE);
+							}
+						}
+					
+				}
+
+			});
+
+			var arr1 = [];
+			if(localStorage.getItem('arr1')) {
+				arr1 = JSON.parse(localStorage.getItem('arr1'));
+			}
+			
+			$.ajax({
+				type: "post",
+				url: "http://192.168.1.110:8090/appuser/getDestina.do",
+				dataType: "json",
+				success: function(data) {
+						for(var i = data.length-1; i >=0 ; i--) {
+							if(data[i].cityName == arr1[(arr1.length - 1)]) {
+								$('#daop').val(data[i].cityName);
+								$('#putx').val(data[i].SITE);
+							}
+						}
+					
+
+				}
+
+			});
+
+			$('.shang').on("click", function() {
+				$(this).addClass('home')
+				$('.xia').removeClass('home')
+				if($('#chup').val() == ''){
+					$('.zhe').show();
+					$('.tis').show();
+					$('.tis span').html("请选择出发地");
+				}else{
+					$('.zhe').show();
+					$('.tan').show();
+					var puts = $('#chup').val()
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.110:8090/appuser/getDestina.do",
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+						var html = '';
+						$.each(data, function(commentIndex, comment) {
+							if(comment['cityName'] == puts) {
+								html += '<li id=' + comment['cityName'] + '>' + comment['SITE'] + '</li>'
+							}
+							$('.hua ul').html(html);
+							
+						});
+
+					}
+
+				});
+				}
+				
+			})
+			
+			$('.hua ul').on('click', 'li', function() {
+				if( $('.shang').hasClass('home')) {
+					val = $(this).html();
+					$('#puts').val(val);
+					localStorage.setItem('val', JSON.stringify(val));
+				}
+				$('.zhe').hide();
+				$('.tan').hide();
+
+			})
+
+			$('.xia').on("click", function() {
+				$(this).addClass('home')
+				$('.shang').removeClass('home')
+				if($('#daop').val() == ''){
+					$('.zhe').show();
+					$('.tis').show();
+					$('.tis span').html("请选择目的地");
+				}else{
+					$('.zhe').show();
+					$('.tan').show();
+					var putx = $('#daop').val()
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.110:8090/appuser/getDestina.do",
+					dataType: "json",
+					success: function(data) {
+						var html = '';
+						$.each(data, function(commentIndex, comment) {
+							if(comment['cityName'] == putx) {
+								html += '<li id=' + comment['cityName'] + ' >' + comment['SITE'] + '</li>'
+							}
+							$('.hua ul').html(html);
+						});
+
+					}
+
+				});
+				}
+				
+			})
+
+			$('.hua ul').on('click', 'li', function() {
+				if($('.xia').hasClass('home')) {
+					val1 = $(this).html();
+					$('#putx').val(val1);
+				
+				localStorage.setItem('val1', JSON.stringify(val1));
+				}
+				$('.zhe').hide();
+				$('.tan').hide();
+				$('#cha').parent('a').attr('href', 'checi.html');
+
+			})
+
+			$('.btn').on('click', function() {
+				$('.zhe').hide();
+				$('.tan').hide();
+				$('#cha').parent('a').attr('href', 'checi.html');
+			})
+			
+			$('.xuan .tu').on('click',function(){
+				var tutc = $("#chup").val();
+				var tutd = $("#daop").val()
+				var shangs = $("#puts").val()
+				var xias = $("#putx").val()
+				$("#chup").val(tutd)
+				$("#daop").val(tutc)
+				$("#puts").val(xias)
+				$("#putx").val(shangs)
+			})
+			$('#cha').on('click', function() {
+				var chush = $('#puts').val();
+				var chuxi = $('#putx').val();
+				localStorage.setItem('chush', JSON.stringify(chush));
+				localStorage.setItem('chuxi', JSON.stringify(chuxi));
+				if($('#puts').val() == '') {
+					$('#cha').parent('a').attr('href', 'javascript:;');
+					$(".tis").show();
+					$('.zhe').show();
+				}
+				if($('#putx').val() == '') {
+					$('#cha').parent('a').attr('href', 'javascript:;');
+					$(".tix").show();
+					$('.zhe').show();
+				}
+				
+
+				var time = $('.ation').html();
+				var timer = ''
+
+				if(GetDateStr(0) == '12月31日' && time == '01月01日') {
+					time = time.replace("月", '-');
+					time = time.replace("日", '');
+					
+					var dd = new Date();
+					var y = dd.getFullYear() + 1;
+					timer = y + '-' + time;
+				} else {
+					time = time.replace("月", '-');
+					time = time.replace("日", '');
+					var dd = new Date();
+					var y = dd.getFullYear();
+					timer = y + '-' + time;
+					localStorage.setItem('timer', JSON.stringify(timer));
+
+				}
+				
+				var tutc = $("#chup").val();
+				var tutd = $("#daop").val()
+				arr=[];
+				arr1 = [];
+				arr.push(1)
+				arr.push(tutc);
+				arr1.push(1)
+				arr1.push(tutd);
+				localStorage.setItem('arr', JSON.stringify(arr));
+				localStorage.setItem('arr1', JSON.stringify(arr1));
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.110:8090/appuser/getShift.do",
+					data: { "GET_ON": tutc, "GET_OFF": tutd, "gosite": chush1, "offsite": chuxi1, "ORDERDATE": timer ,"user_id":userid},
+					dataType: "json",
+					success: function(data) {
+						
+
+					}
+				});
+			})
+			$(".tis").on('click', function() {
+				$('.zhe').hide();
+				$(".tis").hide();
+				$(".tix").hide();
+				$('#cha').parent('a').attr('href', 'checi.html');
+			})
+
+			$(".tix").on('click', function() {
+				$('.zhe').hide();
+				$(".tis").hide();
+				$(".tix").hide();
+				$('#cha').parent('a').attr('href', 'checi.html');
+			})
+			$(".zhe").on('click', function() {
+				$('.zhe').hide();
+				$(".tix").hide();
+				$(".tan").hide();
+				$(".tis").hide();
+				$('#cha').parent('a').attr('href', 'checi.html');
+			})
+		</script>
+	</body>
+
+</html>
